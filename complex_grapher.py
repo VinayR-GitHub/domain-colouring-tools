@@ -20,3 +20,5 @@ def user_graph():
     u.dim_y = input("y-Dimension: ")
     u.f = user_function()
     domain_colour(u.a, u.dim_x, u.dim_y, u.f)
+
+user_graph()
