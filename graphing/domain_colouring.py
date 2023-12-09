@@ -10,3 +10,9 @@ def hue(z):
         np.angle(z) / (2 * np.pi) + 1,
         1
     )
+
+def absolute_grading(z):
+    grad = lambda x: (1 - 1 / (1 + x**2))**0.5
+    return grad(
+        np.absolute(z)
+    )
