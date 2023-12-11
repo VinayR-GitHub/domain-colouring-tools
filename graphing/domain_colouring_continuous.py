@@ -100,14 +100,19 @@ def file_settings():
     ) == False:
         return [
             None,
+            None,
             None
         ]
     else:
         file_name = input("File name: ")
         file_type = "." + input("File type: ") # Do not use full stop in file type.
+        transp = bool(
+            input("Transparency: ")
+        )
     return [
         file_name,
-        file_type
+        file_type,
+        transp
     ]
 
 def user_mapping(colmap):
@@ -180,11 +185,11 @@ def user_mapping(colmap):
             sat,
             A
         )
-    mpl.show()
     settings = file_settings()
     if settings [0] == None:
-        pass
+        mpl.show()
     else:
-        mpl.savefig(settings [0] + settings [1])
+        mpl.savefig(settings [0] + settings [1], transparent = settings [2])
+        mpl.show()
 
 user_mapping(colour_map)
