@@ -193,4 +193,4 @@ def user_mapping(colmap):
         mpl.savefig(settings [0] + settings [1])
         mpl.show()
 
-user_mapping(colour_map)
+user_mapping(colour_map_wm)
