@@ -31,17 +31,22 @@ def eval_func(f, dim_Re, dim_Im, A):
     z = x + (1j * y)
     return f(z)
 
-def colour_map(vals, sat):
-    """{vals} represents a dataset of values, {sat} represents the colour saturation in the HSV system."""
+def colour_map_wm(vals, sat, power = 2):
+    """{vals} represents a dataset of values, {sat} represents the colour saturation in the HSV system, and {power} represents the base of the contour plot schema."""
     h_vals = hue(vals)
     s_vals = sat * np.ones(
         h_vals.shape
     )
-    v_vals = absolute_grading(
-        np.absolute(vals)
+    frac = lambda x: x - np.floor(x)
+    v_vals = frac(
+        np.nan_to_num(
+            np.log(
+                np.absolute(vals)
+            ) / np.log(power)
+        )
     )
     col_hsv = np.dstack(
-        (h_vals, s_vals, v_vals)
+        (h_vals, s_vals, v_vals**0.2)
     )
     return colsys.hsv_to_rgb(col_hsv)
 
