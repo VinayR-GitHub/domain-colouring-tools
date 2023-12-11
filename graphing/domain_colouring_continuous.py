@@ -49,7 +49,7 @@ def colour_map(vals, sat):
     col_hsv = np.dstack(
         (h_vals, s_vals, v_vals)
     )
-    return col_rgb := colorsys.hsv_to_rgb(col_hsv)
+    return colorsys.hsv_to_rgb(col_hsv)
 
 def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500):
     """Where {f} is a function over z, {dim_Re} and {dim_Im} outline the dimensions of the rectangular domain, {sat} represents saturation, and {A} represents unit interval acuity."""
@@ -96,7 +96,7 @@ def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], 
 
 def user_mapping(colmap):
     """Where {colmap} defines a colour mapping schema."""
-    f = lambda z: z = eval(
+    f = lambda z: eval(
         func := input("f(z) = ")
     )
     title = f"$f(z)={func}$"
@@ -126,7 +126,7 @@ def user_mapping(colmap):
         input("Pair viewing: ") #Takes only True/False.
     )
     if pair == False:
-        continue
+        pass
     elif pair == True:
         z_dim = [
             float(
