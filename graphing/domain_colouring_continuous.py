@@ -40,7 +40,7 @@ def eval_func(f, dim_Re, dim_Im, A):
 def colour_map(vals, sat):
     """{vals} represents a dataset of values, {sat} represents the colour saturation in the HSV system."""
     h_vals = hue(vals)
-    s_vals = s * np.ones(
+    s_vals = sat * np.ones(
         h_vals.shape()
     )
     v_vals = absolute_grading(
