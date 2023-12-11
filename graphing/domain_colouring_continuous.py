@@ -163,3 +163,5 @@ def user_mapping(colmap):
             sat,
             A
         )
+
+user_mapping(colour_map)
