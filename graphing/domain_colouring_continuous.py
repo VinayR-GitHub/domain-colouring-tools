@@ -12,7 +12,7 @@ def hue(z):
     )
 
 def absolute_grading(z):
-    grad = lambda x: (1 - 1 / (1 + x**2))**0.5
+    grad = lambda x: (1 - 1 / (1 + x**2))**(1 / (1 + np.pi))
     return grad(
         np.absolute(z)
     )
@@ -100,7 +100,7 @@ def user_mapping(colmap):
     f = lambda z: eval(
         func
     )
-    title = f"$f(z)={func}$"
+    title = f"${f'f(z)={func}'.replace('**', '^')}$"
     sat = float(
         input("Saturation: ")
     )
@@ -164,5 +164,6 @@ def user_mapping(colmap):
             sat,
             A
         )
+    mpl.show()
 
 user_mapping(colour_map)
