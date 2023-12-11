@@ -18,7 +18,7 @@ def absolute_grading(z):
     )
 
 def eval_func(f, dim_Re, dim_Im, A):
-    """Where {f} is a function of z, {dim_Re} and {dim_Im} are tuples outlining the rectangular graphing domain, and {A} represents the number of points in each unit interval."""
+    """Where {f} is a function of z, {dim_Re} and {dim_Im} are lists outlining the rectangular graphing domain, and {A} represents the number of points in each unit interval."""
     hei = dim_Im [1] - dim_Im [0]
     len = dim_Re [1] - dim_Re [0]
     h_res = A * hei
@@ -68,4 +68,29 @@ def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500):
             dim_Im [1]
         ]
     )
+
+def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], sat = 1, A = 500):
+    """Where {f} is a function over z, {dim_Re}, {dim_Im}, and {z_dim} outline the dimensions of the rectangular domain, {sat} represents saturation, {A} represents unit interval acuity."""
+    mpl.rcParams['figure.figsize'] = 8, 5
+    mpl.subplot(1, 2, 1)
+    domain_plot(
+        colmap,
+        f,
+        dim_Re,
+        dim_Im,
+        title,
+        sat,
+        A
+    )
+    mpl.subplot(1, 2, 2)
+    domain_plot(
+        colmap,
+        identity := lambda z: z,
+        [z_dim [0], z_dim [1]],
+        [z_dim [2], z_dim [3]],
+        "$f(z)=z$",
+        sat,
+        A
+    )
+    mpl.tight_layout()
 
