@@ -180,11 +180,11 @@ def user_mapping(colmap):
             sat,
             A
         )
-    mpl.show()
     settings = file_settings()
     if settings [0] == None:
-        pass
+        mpl.show()
     else:
         mpl.savefig(settings [0] + settings [1])
+        mpl.show()
 
 user_mapping(colour_map)
