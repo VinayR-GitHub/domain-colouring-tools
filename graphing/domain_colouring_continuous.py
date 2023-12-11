@@ -41,7 +41,7 @@ def colour_map(vals, sat):
     """{vals} represents a dataset of values, {sat} represents the colour saturation in the HSV system."""
     h_vals = hue(vals)
     s_vals = sat * np.ones(
-        h_vals.shape()
+        h_vals.shape
     )
     v_vals = absolute_grading(
         np.absolute(vals)
