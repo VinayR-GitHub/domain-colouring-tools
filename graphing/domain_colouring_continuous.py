@@ -18,7 +18,7 @@ def absolute_grading(z):
     )
 
 def eval_func(f, dim_Re, dim_Im, a):
-    """Where f is a function of z, dim_Re and dim_Im are tuples outlining the rectangular graphing domain, and A represents the number of points in each unit interval."""
+    """Where {f} is a function of z, {dim_Re} and {dim_Im} are tuples outlining the rectangular graphing domain, and {A} represents the number of points in each unit interval."""
     hei = dim_Im [1] - dim_Im [0]
     len = dim_Re [1] - dim_Re [0]
     h_res = A * hei
@@ -36,3 +36,19 @@ def eval_func(f, dim_Re, dim_Im, a):
     x, y = np.meshgrid(x, y)
     z = x + (1j * y)
     return f(z)
+
+def colour_map(vals, sat):
+    """{vals} represents a dataset of values, {sat} represents the colour saturation in the HSV system."""
+    h_vals = hue(vals)
+    s_vals = s * np.ones(
+        h_vals.shape()
+    )
+    v_vals = absolute_grading(
+        np.absolute(vals)
+    )
+    col_hsv = np.dstack(
+        (h_vals, s_vals, v_vals)
+    )
+    return col_rgb := colorsys.hsv_to_rgb(col_hsv)
+
+
