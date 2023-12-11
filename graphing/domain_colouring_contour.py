@@ -11,12 +11,6 @@ def hue(z):
         1
     )
 
-def absolute_grading(z):
-    grad = lambda x: (1 - 1 / (1 + x**2))**(1 / (1 + np.pi))
-    return grad(
-        np.absolute(z)
-    )
-
 def eval_func(f, dim_Re, dim_Im, A):
     """Where {f} is a function of z, {dim_Re} and {dim_Im} are lists outlining the rectangular graphing domain, and {A} represents the number of points in each unit interval."""
     hei = dim_Im [1] - dim_Im [0]
