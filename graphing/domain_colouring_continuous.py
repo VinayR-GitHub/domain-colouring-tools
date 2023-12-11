@@ -3,7 +3,7 @@
 #---------------
 import numpy as np
 import matplotlib.pyplot as mpl
-import colorsys
+import matplotlib.colors as colsys
 
 def hue(z):
     return np.mod(
@@ -49,7 +49,7 @@ def colour_map(vals, sat):
     col_hsv = np.dstack(
         (h_vals, s_vals, v_vals)
     )
-    return colorsys.hsv_to_rgb(col_hsv)
+    return colsys.hsv_to_rgb(col_hsv)
 
 def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500):
     """Where {f} is a function over z, {dim_Re} and {dim_Im} outline the dimensions of the rectangular domain, {sat} represents saturation, and {A} represents unit interval acuity."""
