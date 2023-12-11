@@ -94,3 +94,72 @@ def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], 
     )
     mpl.tight_layout()
 
+def user_mapping(colmap):
+    """Where {colmap} defines a colour mapping schema."""
+    f = lambda z: z = eval(
+        func := input("f(z) = ")
+    )
+    title = f"$f(z)={func}$"
+    sat = float(
+        input("Saturation: ")
+    )
+    A = int(
+        input("Resolution/acuity: ")
+    )
+    dim_Re = [
+        float(
+            input("Lower real boundary: ")
+        ),
+        float(
+            input("Upper real boundary: ")
+        )
+    ]
+    dim_Im = [
+        float(
+            input("Lower imaginary boundary: ")
+        ),
+        float(
+            input("Upper imaginary boundary: ")
+        )
+    ]
+    pair = bool(
+        input("Pair viewing: ") #Takes only True/False.
+    )
+    if pair == False:
+        continue
+    elif pair == True:
+        z_dim = [
+            float(
+                input("Lower real boundary for identity: ")
+            ),
+            float(
+                input("Upper real boundary for identity: ")
+            ),
+            float(
+                input("Lower imaginary boundary for identity: ")
+            ),
+            float(
+                input("Upper imaginary boundary for identity: ")
+            )
+        ]
+    if pair == False:
+        domain_plot(
+            colmap,
+            f,
+            dim_Re,
+            dim_Im,
+            title,
+            sat,
+            A
+        )
+    elif pair == True:
+        pairview(
+            dim_Re,
+            dim_Im,
+            colmap,
+            f,
+            title,
+            z_dim,
+            sat,
+            A
+        )
