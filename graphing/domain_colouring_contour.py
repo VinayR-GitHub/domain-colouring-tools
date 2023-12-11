@@ -50,10 +50,10 @@ def colour_map_wm(vals, sat, power = 2):
     )
     return colsys.hsv_to_rgb(col_hsv)
 
-def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500):
+def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500, power = 2):
     """Where {f} is a function over z, {dim_Re} and {dim_Im} outline the dimensions of the rectangular domain, {sat} represents saturation, and {A} represents unit interval acuity."""
     vals = eval_func(f, dim_Re, dim_Im, A)
-    cols = colmap(vals, sat)
+    cols = colmap(vals, sat, power)
     mpl.xlabel("$\Re(z)$")
     mpl.ylabel("$\Im(z)$")
     mpl.title(title)
@@ -68,7 +68,7 @@ def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500):
         ]
     )
 
-def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], sat = 1, A = 500):
+def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], sat = 1, A = 500, power = 2):
     """Where {f} is a function over z, {dim_Re}, {dim_Im}, and {z_dim} outline the dimensions of the rectangular domain, {sat} represents saturation, {A} represents unit interval acuity."""
     mpl.rcParams['figure.figsize'] = 8, 5
     mpl.subplot(1, 2, 1)
@@ -79,7 +79,8 @@ def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], 
         dim_Im,
         title,
         sat,
-        A
+        A,
+        power
     )
     mpl.subplot(1, 2, 2)
     domain_plot(
@@ -89,7 +90,8 @@ def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], 
         [z_dim [2], z_dim [3]],
         "$f(z)=z$",
         sat,
-        A
+        A,
+        power
     )
     mpl.tight_layout()
 
@@ -121,6 +123,9 @@ def user_mapping(colmap):
     )
     A = int(
         input("Resolution/acuity: ")
+    )
+    power = float(
+        input("Contour gradation power: ")
     )
     dim_Re = [
         float(
@@ -166,7 +171,8 @@ def user_mapping(colmap):
             dim_Im,
             title,
             sat,
-            A
+            A,
+            power
         )
     elif pair == True:
         pairview(
@@ -177,7 +183,8 @@ def user_mapping(colmap):
             title,
             z_dim,
             sat,
-            A
+            A,
+            power
         )
     settings = file_settings()
     if settings [0] == None:
