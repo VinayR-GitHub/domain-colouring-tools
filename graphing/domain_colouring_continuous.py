@@ -94,7 +94,28 @@ def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], 
     )
     mpl.tight_layout()
 
-def user_mapping(colmap, file_name = None, file_type = ".png", transparency = False):
+def file_settings():
+    if bool(
+        input("Save file: ")
+    ) == False:
+        return [
+            None,
+            None,
+            None
+        ]
+    else:
+        file_name = input("File name: ")
+        file_type = "." + input("File type: ") # Do not use full stop in file type.
+        transp = bool(
+            input("Transparency: ")
+        )
+    return [
+        file_name,
+        file_type,
+        transp
+    ]
+
+def user_mapping(colmap):
     """Where {colmap} defines a colour mapping schema."""
     func = input("f(z) = ")
     f = lambda z: eval(
@@ -165,9 +186,10 @@ def user_mapping(colmap, file_name = None, file_type = ".png", transparency = Fa
             A
         )
     mpl.show()
-    if file_name == None:
+    settings = file_settings()
+    if settings [0] == None:
         pass
     else:
-        mpl.savefig(file_name + file_type, transparent = transparency)
+        mpl.savefig(settings [0] + settings [1], transparent = settings [2])
 
 user_mapping(colour_map)
