@@ -96,8 +96,9 @@ def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], 
 
 def user_mapping(colmap):
     """Where {colmap} defines a colour mapping schema."""
+    func = input("f(z) = ")
     f = lambda z: eval(
-        func := input("f(z) = ")
+        func
     )
     title = f"$f(z)={func}$"
     sat = float(
