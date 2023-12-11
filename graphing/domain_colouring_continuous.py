@@ -17,7 +17,7 @@ def absolute_grading(z):
         np.absolute(z)
     )
 
-def eval_func(f, dim_Re, dim_Im, a):
+def eval_func(f, dim_Re, dim_Im, A):
     """Where {f} is a function of z, {dim_Re} and {dim_Im} are tuples outlining the rectangular graphing domain, and {A} represents the number of points in each unit interval."""
     hei = dim_Im [1] - dim_Im [0]
     len = dim_Re [1] - dim_Re [0]
@@ -51,4 +51,21 @@ def colour_map(vals, sat):
     )
     return col_rgb := colorsys.hsv_to_rgb(col_hsv)
 
+def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500):
+    """Where {f} is a function over z, {dim_Re} and {dim_Im} outline the dimensions of the rectangular domain, {sat} represents saturation, and {A} represents unit interval acuity."""
+    vals = eval_func(f, dim_Re, dim_Im, A)
+    cols = colmap(vals, sat)
+    mpl.xlabel("$\Re(z)$")
+    mpl.ylabel("$\Im(z)$")
+    mpl.title(title)
+    mpl.imshow(
+        cols,
+        origin = "lower",
+        extent = [
+            dim_Re [0],
+            dim_Re [1],
+            dim_Im [0],
+            dim_Im [1]
+        ]
+    )
 
