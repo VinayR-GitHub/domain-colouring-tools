@@ -40,11 +40,22 @@ def eval_func(f, dim_Re, dim_Im, A):
 def colour_map(vals, sat):
     """{vals} represents a dataset of values, {sat} represents the colour saturation in the HSV system."""
     h_vals = hue(vals)
+    m_val = 0.7
+    M_val = 1
+    n_val = 15 #Optimal isochromatic quantity for analytic and conformal mappings.
+    phase_func = lambda a, b, c, d: c + ((d - c) * ((a / b) - np.floor(a / b)))
+    v_vals = phase_func(h_vals, (1.0 / n), m, M) * phase_func(
+        np.nan_to_num(
+            np.log(
+                np.absolute(vals)
+            )
+        ),
+        (2 * np.pi / n),
+        m,
+        M
+    )
     s_vals = sat * np.ones(
         h_vals.shape
-    )
-    v_vals = absolute_grading(
-        np.absolute(vals)
     )
     col_hsv = np.dstack(
         (h_vals, s_vals, v_vals)
