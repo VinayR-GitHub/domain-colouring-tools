@@ -104,7 +104,7 @@ def file_settings():
         ]
     else:
         file_name = input("File name: ")
-        file_type = "." + input("File type: ") # Do not use full stop in file type.
+        file_type = "." + input("File type: ") #Do not use full stop in file type.
     return [
         file_name,
         file_type
