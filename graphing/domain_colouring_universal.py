@@ -77,15 +77,15 @@ def colour_map_ph(vals, sat):
     M_val = 1
     n_val = 15 #Optimal isochromatic quantity for analytic and conformal mappings.
     phase_func = lambda a, b, c, d: c + ((d - c) * ((a / b) - np.floor(a / b)))
-    v_vals = phase_func(h_vals, (1.0 / n), m, M) * phase_func(
+    v_vals = phase_func(h_vals, (1.0 / n_val), m_val, M_val) * phase_func(
         np.nan_to_num(
             np.log(
                 np.absolute(vals)
             )
         ),
-        (2 * np.pi / n),
-        m,
-        M
+        (2 * np.pi / n_val),
+        m_val,
+        M_val
     )
     s_vals = sat * np.ones(
         h_vals.shape
@@ -167,33 +167,34 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
             input("Upper imaginary boundary for identity: ")
         )
     ]
+    mpl.rcParams['figure.figsize'] = 18, 11
     mpl.subplot(2, 3, 1)
     domain_plot(
         colmap_co,
         f,
         dim_Re,
         dim_Im,
-        "$f(z)=z$",
+        title,
         sat,
         A
     )
-    plt.subplot(2, 3, 2)
+    mpl.subplot(2, 3, 2)
     domain_plot(
         colmap_wm,
         f,
         dim_Re,
         dim_Im,
-        "$f(z)=z$",
+        title,
         sat,
         A
     )
-    plt.subplot(2, 3, 3)
+    mpl.subplot(2, 3, 3)
     domain_plot(
         colmap_ph,
         f,
         dim_Re,
         dim_Im,
-        "$f(z)=z$",
+        title,
         sat,
         A
     )
@@ -207,7 +208,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         sat,
         A
     )
-    plt.subplot(2, 3, 5)
+    mpl.subplot(2, 3, 5)
     domain_plot(
         colmap_wm,
         identity := lambda z: z,
@@ -217,7 +218,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         sat,
         A
     )
-    plt.subplot(2, 3, 6)
+    mpl.subplot(2, 3, 6)
     domain_plot(
         colmap_ph,
         identity := lambda z: z,
@@ -227,7 +228,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         sat,
         A
     )
-    mpl.tightlayout()
+    mpl.tight_layout()
     settings = file_settings()
     mpl.savefig(settings [0] + settings [1])
     mpl.show()
