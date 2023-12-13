@@ -186,7 +186,8 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         dim_Im,
         title,
         sat,
-        A
+        A,
+        power
     )
     mpl.subplot(2, 3, 3)
     domain_plot(
@@ -216,7 +217,8 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         [z_dim [2], z_dim [3]],
         "$f(z)=z$",
         sat,
-        A
+        A,
+        power
     )
     mpl.subplot(2, 3, 6)
     domain_plot(
