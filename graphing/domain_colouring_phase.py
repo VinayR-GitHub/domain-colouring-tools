@@ -44,15 +44,15 @@ def colour_map(vals, sat):
     M_val = 1
     n_val = 15 #Optimal isochromatic quantity for analytic and conformal mappings.
     phase_func = lambda a, b, c, d: c + ((d - c) * ((a / b) - np.floor(a / b)))
-    v_vals = phase_func(h_vals, (1.0 / n), m, M) * phase_func(
+    v_vals = phase_func(h_vals, (1.0 / n_val), m_val, M_val) * phase_func(
         np.nan_to_num(
             np.log(
                 np.absolute(vals)
             )
         ),
-        (2 * np.pi / n),
-        m,
-        M
+        (2 * np.pi / n_val),
+        m_val,
+        M_val
     )
     s_vals = sat * np.ones(
         h_vals.shape
