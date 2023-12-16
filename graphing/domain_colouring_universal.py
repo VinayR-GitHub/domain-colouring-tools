@@ -95,10 +95,13 @@ def colour_map_ph(vals, sat):
     )
     return colsys.hsv_to_rgb(col_hsv)
 
-def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500):
+def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500, contour = False, power = 2):
     """Where {f} is a function over z, {dim_Re} and {dim_Im} outline the dimensions of the rectangular domain, {sat} represents saturation, and {A} represents unit interval acuity."""
     vals = eval_func(f, dim_Re, dim_Im, A)
-    cols = colmap(vals, sat)
+    if contour == True:
+        cols = colmap(vals, sat, power)
+    else:
+        cols = colmap(vals, sat)
     mpl.xlabel("$\Re(z)$")
     mpl.ylabel("$\Im(z)$")
     mpl.title(title)
@@ -176,7 +179,8 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         dim_Im,
         title,
         sat,
-        A
+        A,
+        False
     )
     mpl.subplot(2, 3, 2)
     domain_plot(
@@ -187,6 +191,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         title,
         sat,
         A,
+        True,
         power
     )
     mpl.subplot(2, 3, 3)
@@ -197,7 +202,8 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         dim_Im,
         title,
         sat,
-        A
+        A,
+        False
     )
     mpl.subplot(2, 3, 4)
     domain_plot(
@@ -207,7 +213,8 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         [z_dim [2], z_dim [3]],
         "$f(z)=z$",
         sat,
-        A
+        A,
+        False
     )
     mpl.subplot(2, 3, 5)
     domain_plot(
@@ -218,6 +225,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         "$f(z)=z$",
         sat,
         A,
+        True,
         power
     )
     mpl.subplot(2, 3, 6)
@@ -228,7 +236,8 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
         [z_dim [2], z_dim [3]],
         "$f(z)=z$",
         sat,
-        A
+        A,
+        False
     )
     mpl.tight_layout()
     settings = file_settings()
