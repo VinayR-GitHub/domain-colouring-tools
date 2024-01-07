@@ -6,10 +6,10 @@ class MyApp(Widget):
     pass
 
 
-class MyApp(App):
+class MyApplication(App):
     def build(self):
         return MyApp()
 
 
 if __name__ == '__main__':
-    MyApp().run()
+    MyApplication().run()
