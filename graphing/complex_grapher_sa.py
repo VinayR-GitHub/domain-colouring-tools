@@ -1,6 +1,3 @@
-#References:
-#http://www.mi.fu-berlin.de/en/math/groups/ag-geom/publications/db/ieee_article_old_low_v3_1.pdf
-#---------------
 import numpy as np
 import matplotlib.pyplot as pyplot
 

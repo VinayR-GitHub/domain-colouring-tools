@@ -1,6 +1,3 @@
-#References:
-#https://notebook.community/empet/Math/DomainColoring
-#---------------
 import numpy as np
 import matplotlib.pyplot as mpl
 import matplotlib.colors as colsys
