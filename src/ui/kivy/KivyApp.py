@@ -6,7 +6,7 @@ class MyApp(App):
 
     def build(self):
         box = BoxLayout()
-        #box.add_widget(FigureCanvasKivyAgg(plt.gcf()))
+        box.add_widget(FigureCanvasKivyAgg(plt.gcf()))
         return box
 
 import os
