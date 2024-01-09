@@ -28,10 +28,18 @@ home_image.setAlignment(QtCore.Qt.AlignCenter)
 coords.addWidget(home_image, 0, 0)
 
 #Create button options.
-
-
-
-
+select_button1 = QPushButton(
+    'Standard Plot'
+)
+select_button2 = QPushButton(
+    'Plot with Modulus Contours'
+)
+select_button3 = QPushButton(
+    'Plot with Phase/Modulus Contours'
+)
+select_button4 = QPushButton(
+    'Multiple Plots'
+)
 
 
 
