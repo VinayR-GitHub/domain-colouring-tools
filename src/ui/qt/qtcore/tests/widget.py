@@ -11,7 +11,12 @@ display = QWidget()
 #Initialise window features.
 display.setWindowTitle('Domain Colouring Tools')
 display.setStyleSheet('background: #191213;')
-display.setBaseSize(1024, 1024)
+display.setGeometry(0, 0, 1024, 1024)
+display.setWindowIcon(
+    QtGui.QIcon(
+        'assets/imgico.jpg'
+    )
+)
 
 #Initialise coordinate system.
 coords = QGridLayout()
