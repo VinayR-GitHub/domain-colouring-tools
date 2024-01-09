@@ -11,9 +11,36 @@ display = QWidget()
 #Initialise window features.
 display.setWindowTitle('Domain Colouring Tools')
 display.setStyleSheet('background: #191213;')
+display.setBaseSize(1024, 1024)
+
+#Initialise coordinate system.
+coords = QGridLayout()
+display.setLayout(coords)
+
+#Set up image.
+home_image = QLabel()
+home_image.setPixmap(
+    QPixmap(
+        'assets/imghome.jpg'
+    )
+)
+home_image.setAlignment(QtCore.Qt.AlignCenter)
+coords.addWidget(home_image, 0, 0)
+
+#Create button options.
+
+
+
+
+
+
+
+
+
+
 
 #Display and exit window.
-display.show()
+display.showMaximized()
 sys.exit(
     myapp.exec()
 )
