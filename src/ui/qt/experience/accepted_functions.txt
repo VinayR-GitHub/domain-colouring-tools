@@ -1,30 +1,33 @@
-sine: np.sin
-cosine: np.cos
-tangent: np.tan
+sine: sin --> np.sin
+cosine: cos --> np.cos
+tangent: tan --> np.tan
 
-arcsine: np.arcsin
-arccosine: np.arccos
-arctangent: np.arctan
+arcsine: arcsin --> np.arcsin
+arccosine: arccos --> np.arccos
+arctangent: arctan --> np.arctan
 
-hyperbolic sine: np.sinh
-hyperbolic cosine: np.cosh
-hyperbolic tangent: np.tanh
+hyperbolic sine: sinh --> np.sinh
+hyperbolic cosine: cosh --> np.cosh
+hyperbolic tangent: tanh --> np.tanh
 
-hyperbolic arcsine: np.arcsinh
-hyperbolic arccosine: np.arccosh
-hyperbolic arctangent: np.arctanh
+hyperbolic arcsine: arcsinh --> np.arcsinh
+hyperbolic arccosine: arccosh --> np.arccosh
+hyperbolic arctangent: arctanh --> np.arctanh
 
-exponential (base e): np.exp
-exponential (base 2): np.exp2
+exponential (base e): exp --> np.exp
 
-natural logarithm: np.log
-logarithm (base 10): np.log10
-logarithm (base 2): np.log2
+natural logarithm: log --> np.log
+logarithm (base 10): log10 --> np.log10
+logarithm (base 2): log2 --> np.log2
 
-normalised sinc: np.sinc
-modified bessel function of the first kind (n = 0): np.i0
+normalised sinc: sinc --> np.sinc
+modified bessel function of the first kind (n = 0): bessel0 --> np.i0
 
-argument: np.angle
-real component: np.real
-imaginary component: np.imag
-complex conjugate: np.conj
+argument: Arg --> np.angle
+real component: Re --> np.real
+imaginary component: Im --> np.imag
+complex conjugate: conj --> np.conj
+
+Euler's number: e --> np.e
+Euler-Mascheroni constant: gamma --> np.euler_gamma
+pi: pi --> np.pi
