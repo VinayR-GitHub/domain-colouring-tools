@@ -164,12 +164,13 @@ def home_window():
         <a href = "https://vinayr-github.github.io/">website</a>.</p>'''
     )
     base_info.setStyleSheet(
-        '* {text-align: center;' +
+        '* {margin-top: 0;' +
         'color: "#FFFFFF";' +
         'font-size: 20px;}' +
         'a {color: "#40E0D0";}' +
         'a:hover {text-decoration: underline;}'
     )
+    base_info.setAlignment(QtCore.Qt.AlignCenter)
     base_info.setOpenExternalLinks(True)
     gwdict ['base_info'].append(base_info)
     coords.addWidget(
