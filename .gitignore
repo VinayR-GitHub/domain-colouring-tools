@@ -1,3 +1,9 @@
-env
-venv_qtcore
-kivy_venv
+env/
+kivy_venv/
+
+venv_qtcore/Include/
+venv_qtcore/Lib/
+venv_qtcore/share/
+venv_qtcore/pyvenv.cfg
+
+*.exe

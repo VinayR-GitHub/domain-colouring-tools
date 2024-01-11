@@ -78,9 +78,8 @@ def home_window():
         0
     )
 
-    select_button2 = QPushButton(
-        'Plot with Modulus Contours'
-    )
+    select_button2 = QPushButton()
+    select_button2.setText('Plot with Modulus Contours')
     select_button2.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
         'border-radius: 45px;' +
@@ -102,9 +101,8 @@ def home_window():
         1
     )
 
-    select_button3 = QPushButton(
-        'Plot with Phase/Modulus Contours'
-    )
+    select_button3 = QPushButton()
+    select_button3.setText('Plot with Phase/Modulus Contours')
     select_button3.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
         'border-radius: 45px;' +
@@ -126,9 +124,8 @@ def home_window():
         2
     )
 
-    select_button4 = QPushButton(
-        'Multiple Plots'
-    )
+    select_button4 = QPushButton()
+    select_button4.setText('Multiple Plots')
     select_button4.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
         'border-radius: 45px;' +
@@ -156,19 +153,18 @@ def home_window():
     base_info = QLabel()
     base_info.setText(
         '''<p>Domain colouring is one of the key tools used in complex analysis, and presents great opportunities to aid and accelerate mathematical research.</p>
-        <p>With this tool, a variety of complex functions can be plotted on their domain, in a variety of different ways.</p>
+        <p>With this tool, a variety of complex functions can be plotted on their domain, in a variety of different styles.</p>
         <p>The tool also has native support for a variety of special functions, such as modified Bessel functions of the first kind.</p>
         <p>To see my other projects, visit my 
-        <a href = "https://github.com/VinayR-GitHub">GitHub</a> <!--Shameless self promotion-->
+        <a href = "https://github.com/VinayR-GitHub" name = "VinayR-GitHub" class = "hl">GitHub</a> <!--Shameless self promotion-->
          or my 
-        <a href = "https://vinayr-github.github.io/">website</a>.</p>'''
+        <a href = "https://vinayr-github.github.io/" name = "VinayR's Website" class = "hl">website</a>.</p>'''
     )
     base_info.setStyleSheet(
         '* {margin-top: 0;' +
         'color: "#FFFFFF";' +
         'font-size: 20px;}' +
-        'a {color: "#40E0D0";}' +
-        'a:hover {text-decoration: underline;}'
+        'a {color: "#40E0D0";}'
     )
     base_info.setAlignment(QtCore.Qt.AlignCenter)
     base_info.setOpenExternalLinks(True)
@@ -180,6 +176,18 @@ def home_window():
         1,
         4
     )
+
+def sel_1_entry():
+    pass
+
+def sel_2_entry():
+    pass
+
+def sel_3_entry():
+    pass
+
+def sel_4_entry():
+    pass
 
 
 home_window()
