@@ -11,7 +11,6 @@ display = QWidget()
 #Initialise window features.
 display.setWindowTitle('Domain Colouring Tools')
 display.setStyleSheet('background: #191213;')
-display.setGeometry(0, 0, 1024, 1024)
 display.setWindowIcon(
     QtGui.QIcon(
         'assets/imgico.jpg'
@@ -27,9 +26,11 @@ home_image = QLabel()
 home_image.setPixmap(
     QPixmap(
         'assets/imghome.jpg'
-    )
+    ).scaled(512, 512, QtCore.Qt.KeepAspectRatio, QtCore.Qt.FastTransformation)
+
 )
 home_image.setAlignment(QtCore.Qt.AlignCenter)
+home_image.setStyleSheet('margin-top: 0;')
 coords.addWidget(home_image, 0, 0, 1, 4)
 
 #Create button options.
@@ -40,7 +41,8 @@ select_button1.setStyleSheet(
     'border: 2.5px solid "#26619C";' +
     'border-radius: 16px;' +
     'color: "#FFFFFF";' +
-    'font-size: 38px;'
+    'font-size: 38px;' +
+    'height: 350px;'
 )
 select_button1.setCursor(
     QCursor(
@@ -56,7 +58,8 @@ select_button2.setStyleSheet(
     'border: 2.5px solid "#26619C";' +
     'border-radius: 16px;' +
     'color: "#FFFFFF";' +
-    'font-size: 38px;'
+    'font-size: 38px;' +
+    'height: 350px;'
 )
 select_button2.setCursor(
     QCursor(
@@ -73,7 +76,8 @@ select_button3.setStyleSheet(
     'border: 2.5px solid "#26619C";' +
     'border-radius: 16px;' +
     'color: "#FFFFFF";' +
-    'font-size: 38px;'
+    'font-size: 38px;' +
+    'height: 350px;'
 )
 select_button3.setCursor(
     QCursor(
@@ -90,7 +94,8 @@ select_button4.setStyleSheet(
     'border: 2.5px solid "#26619C";' +
     'border-radius: 16px;' +
     'color: "#FFFFFF";' +
-    'font-size: 38px;'
+    'font-size: 38px;' +
+    'height: 350px;'
 )
 select_button4.setCursor(
     QCursor(
@@ -99,6 +104,7 @@ select_button4.setCursor(
 )
 coords.addWidget(select_button4, 2, 3)
 
+#Add infotext.
 
 
 
