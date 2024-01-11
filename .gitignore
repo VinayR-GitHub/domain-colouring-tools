@@ -1,5 +1,10 @@
 env/
 kivy_venv/
 
-venv_qtcore/
-!venv_qtcore/Scripts/activate.sh
+venv_qtcore/Include/
+venv_qtcore/Lib/
+venv_qtcore/share/
+venv_qtcore/pyvenv.cfg
+
+*.ps1
+*.exe
