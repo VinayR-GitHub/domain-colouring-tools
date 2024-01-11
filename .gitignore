@@ -1,9 +1,7 @@
 env/
 kivy_venv/
 
-venv_qtcore/Include/
-venv_qtcore/Lib/
-venv_qtcore/share/
-venv_qtcore/pyvenv.cfg
+venv_qtcore/
+!venv_qtcore/Scripts/
 
 *.exe

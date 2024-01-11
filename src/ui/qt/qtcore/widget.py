@@ -11,7 +11,27 @@ gwdict = {
     'select_button2': [],
     'select_button3': [],
     'select_button4': [],
-    'base_info': []
+    'base_info': [],
+    'sel1': [],
+    'sel2': [],
+    'sel3': [],
+    'sel4': [],
+    'sel1': [],
+    'sel2': [],
+    'sel3': [],
+    'sel4': [],
+    'sel1': [],
+    'sel2': [],
+    'sel3': [],
+    'sel4': [],
+    'sel1': [],
+    'sel2': [],
+    'sel3': [],
+    'sel4': [],
+    'sel1': [],
+    'sel2': [],
+    'sel3': [],
+    'sel4': [],
 }
 
 #Initialise app and window.
