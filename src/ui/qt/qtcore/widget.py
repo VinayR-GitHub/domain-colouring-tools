@@ -156,16 +156,21 @@ def home_window():
     base_info = QLabel()
     base_info.setText(
         '''<p>Domain colouring is one of the key tools used in complex analysis, and presents great opportunities to aid and accelerate mathematical research.</p>
-        <p>To see other projects by VinayR-GitHub, view <a href = "https://vinayr-github.github.io/">VinayR\'s Website</a>.</p>'''
+        <p>With this tool, a variety of complex functions can be plotted on their domain, in a variety of different ways.</p>
+        <p>The tool also has native support for a variety of special functions, such as modified Bessel functions of the first kind.</p>
+        <p>To see my other projects, visit my 
+        <a href = "https://github.com/VinayR-GitHub">GitHub</a> <!--Shameless self promotion-->
+         or my 
+        <a href = "https://vinayr-github.github.io/">website</a>.</p>'''
     )
     base_info.setStyleSheet(
         '* {text-align: center;' +
         'color: "#FFFFFF";' +
-        'font-size: 20px;' +
-        'text-align: center;}'
-        'a {text-decoration: none;}' +
+        'font-size: 20px;}' +
+        'a {color: "#40E0D0";}' +
         'a:hover {text-decoration: underline;}'
     )
+    base_info.setOpenExternalLinks(True)
     gwdict ['base_info'].append(base_info)
     coords.addWidget(
         gwdict ['base_info'] [-1],
