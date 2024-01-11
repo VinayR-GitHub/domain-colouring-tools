@@ -10,7 +10,8 @@ gwdict = {
     'select_button1': [],
     'select_button2': [],
     'select_button3': [],
-    'select_button4': []
+    'select_button4': [],
+    'base_info': []
 }
 
 #Initialise app and window.
@@ -40,7 +41,7 @@ def home_window():
 
     )
     home_image.setAlignment(QtCore.Qt.AlignCenter)
-    home_image.setStyleSheet('margin-top: 0;')
+    home_image.setStyleSheet('margin: 0;')
     gwdict ['home_image'].append(home_image)
     coords.addWidget(
         gwdict ['home_image'] [-1],
@@ -49,6 +50,8 @@ def home_window():
         1,
         4
     )
+
+    ########################################
 
     #Create button options.
     select_button1 = QPushButton(
@@ -146,7 +149,31 @@ def home_window():
         2,
         3
     )
+
+    ########################################
+
     #Add infotext.
+    base_info = QLabel()
+    base_info.setText(
+        '''<p>Domain colouring is one of the key tools used in complex analysis, and presents great opportunities to aid and accelerate mathematical research.</p>
+        <p>To see other projects by VinayR-GitHub, view <a href = "https://vinayr-github.github.io/">VinayR\'s Website</a>.</p>'''
+    )
+    base_info.setStyleSheet(
+        '* {text-align: center;' +
+        'color: "#FFFFFF";' +
+        'font-size: 20px;' +
+        'text-align: center;}'
+        'a {text-decoration: none;}' +
+        'a:hover {text-decoration: underline;}'
+    )
+    gwdict ['base_info'].append(base_info)
+    coords.addWidget(
+        gwdict ['base_info'] [-1],
+        1,
+        0,
+        1,
+        4
+    )
 
 
 home_window()
