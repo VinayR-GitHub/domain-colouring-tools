@@ -21,93 +21,102 @@ display.setWindowIcon(
 coords = QGridLayout()
 display.setLayout(coords)
 
-#Set up image.
-home_image = QLabel()
-home_image.setPixmap(
-    QPixmap(
-        'assets/imghome.jpg'
-    ).scaled(512, 512, QtCore.Qt.KeepAspectRatio, QtCore.Qt.FastTransformation)
+def home_window():
+    #Set up image.
+    home_image = QLabel()
+    home_image.setPixmap(
+        QPixmap(
+            'assets/imghome.jpg'
+        ).scaled(512, 512, QtCore.Qt.KeepAspectRatio, QtCore.Qt.FastTransformation)
 
-)
-home_image.setAlignment(QtCore.Qt.AlignCenter)
-home_image.setStyleSheet('margin-top: 0;')
-coords.addWidget(home_image, 0, 0, 1, 4)
-
-#Create button options.
-select_button1 = QPushButton(
-    'Standard Plot'
-)
-select_button1.setStyleSheet(
-    'border: 2.5px solid "#26619C";' +
-    'border-radius: 16px;' +
-    'color: "#FFFFFF";' +
-    'font-size: 38px;' +
-    'height: 350px;'
-)
-select_button1.setCursor(
-    QCursor(
-        QtCore.Qt.PointingHandCursor
     )
-)
-coords.addWidget(select_button1, 2, 0)
+    home_image.setAlignment(QtCore.Qt.AlignCenter)
+    home_image.setStyleSheet('margin-top: 0;')
+    coords.addWidget(home_image, 0, 0, 1, 4)
 
-select_button2 = QPushButton(
-    'Plot with Modulus Contours'
-)
-select_button2.setStyleSheet(
-    'border: 2.5px solid "#26619C";' +
-    'border-radius: 16px;' +
-    'color: "#FFFFFF";' +
-    'font-size: 38px;' +
-    'height: 350px;'
-)
-select_button2.setCursor(
-    QCursor(
-        QtCore.Qt.PointingHandCursor
+    #Create button options.
+    select_button1 = QPushButton(
+        'Standard Plot'
     )
-)
-coords.addWidget(select_button2, 2, 1)
-
-
-select_button3 = QPushButton(
-    'Plot with Phase/Modulus Contours'
-)
-select_button3.setStyleSheet(
-    'border: 2.5px solid "#26619C";' +
-    'border-radius: 16px;' +
-    'color: "#FFFFFF";' +
-    'font-size: 38px;' +
-    'height: 350px;'
-)
-select_button3.setCursor(
-    QCursor(
-        QtCore.Qt.PointingHandCursor
+    select_button1.setStyleSheet(
+        '* {border: 2.5px solid "#26619C";' +
+        'border-radius: 45px;' +
+        'color: "#FFFFFF";' +
+        'font-size: 30px;' +
+        'margin: 0 10px;' +
+        'padding: 30px 15px;}' +
+        '*:hover {background-color: "#26619c";}'
     )
-)
-coords.addWidget(select_button3, 2, 2)
-
-
-select_button4 = QPushButton(
-    'Multiple Plots'
-)
-select_button4.setStyleSheet(
-    'border: 2.5px solid "#26619C";' +
-    'border-radius: 16px;' +
-    'color: "#FFFFFF";' +
-    'font-size: 38px;' +
-    'height: 350px;'
-)
-select_button4.setCursor(
-    QCursor(
-        QtCore.Qt.PointingHandCursor
+    select_button1.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
     )
-)
-coords.addWidget(select_button4, 2, 3)
+    coords.addWidget(select_button1, 2, 0)
 
-#Add infotext.
+    select_button2 = QPushButton(
+        'Plot with Modulus Contours'
+    )
+    select_button2.setStyleSheet(
+        '* {border: 2.5px solid "#26619C";' +
+        'border-radius: 45px;' +
+        'color: "#FFFFFF";' +
+        'font-size: 30px;' +
+        'margin: 0 10px;' +
+        'padding: 30px 15px;}' +
+        '*:hover {background-color: "#26619c";}'
+    )
+    select_button2.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    coords.addWidget(select_button2, 2, 1)
 
 
+    select_button3 = QPushButton(
+        'Plot with Phase/Modulus Contours'
+    )
+    select_button3.setStyleSheet(
+        '* {border: 2.5px solid "#26619C";' +
+        'border-radius: 45px;' +
+        'color: "#FFFFFF";' +
+        'font-size: 30px;' +
+        'margin: 0 10px;' +
+        'padding: 30px 15px;}' +
+        '*:hover {background-color: "#26619c";}'
+    )
+    select_button3.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    coords.addWidget(select_button3, 2, 2)
 
+
+    select_button4 = QPushButton(
+        'Multiple Plots'
+    )
+    select_button4.setStyleSheet(
+        '* {border: 2.5px solid "#26619C";' +
+        'border-radius: 45px;' +
+        'color: "#FFFFFF";' +
+        'font-size: 30px;' +
+        'margin: 0 10px;' +
+        'padding: 30px 15px;}' +
+        '*:hover {background-color: "#26619c";}'
+    )
+    select_button4.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    coords.addWidget(select_button4, 2, 3)
+
+    #Add infotext.
+
+
+home_window()
 
 
 #Display and exit window.
