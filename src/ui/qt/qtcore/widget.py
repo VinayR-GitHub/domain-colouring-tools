@@ -30,51 +30,74 @@ home_image.setPixmap(
     )
 )
 home_image.setAlignment(QtCore.Qt.AlignCenter)
-coords.addWidget(home_image, 0, 0)
+coords.addWidget(home_image, 0, 0, 1, 4)
 
 #Create button options.
 select_button1 = QPushButton(
     'Standard Plot'
 )
-select_button1.setStyleSheet('border: 2.5px solid "#26619C"')
+select_button1.setStyleSheet(
+    'border: 2.5px solid "#26619C";' +
+    'border-radius: 16px;' +
+    'color: "#FFFFFF";' +
+    'font-size: 38px;'
+)
 select_button1.setCursor(
     QCursor(
         QtCore.Qt.PointingHandCursor
     )
 )
-
+coords.addWidget(select_button1, 2, 0)
 
 select_button2 = QPushButton(
     'Plot with Modulus Contours'
 )
-select_button2.setStyleSheet('border: 2.5px solid "#26619C"')
+select_button2.setStyleSheet(
+    'border: 2.5px solid "#26619C";' +
+    'border-radius: 16px;' +
+    'color: "#FFFFFF";' +
+    'font-size: 38px;'
+)
 select_button2.setCursor(
     QCursor(
         QtCore.Qt.PointingHandCursor
     )
 )
+coords.addWidget(select_button2, 2, 1)
 
 
 select_button3 = QPushButton(
     'Plot with Phase/Modulus Contours'
 )
-select_button3.setStyleSheet('border: 2.5px solid "#26619C"')
+select_button3.setStyleSheet(
+    'border: 2.5px solid "#26619C";' +
+    'border-radius: 16px;' +
+    'color: "#FFFFFF";' +
+    'font-size: 38px;'
+)
 select_button3.setCursor(
     QCursor(
         QtCore.Qt.PointingHandCursor
     )
 )
+coords.addWidget(select_button3, 2, 2)
 
 
 select_button4 = QPushButton(
     'Multiple Plots'
 )
-select_button4.setStyleSheet('border: 2.5px solid "#26619C"')
+select_button4.setStyleSheet(
+    'border: 2.5px solid "#26619C";' +
+    'border-radius: 16px;' +
+    'color: "#FFFFFF";' +
+    'font-size: 38px;'
+)
 select_button4.setCursor(
     QCursor(
         QtCore.Qt.PointingHandCursor
     )
 )
+coords.addWidget(select_button4, 2, 3)
 
 
 
