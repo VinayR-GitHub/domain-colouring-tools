@@ -4,6 +4,15 @@ from PyQt5.QtGui import QPixmap
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import QCursor
 
+#Initialise global widgets dict.
+gwdict = {
+    'home_image': [],
+    'select_button1': [],
+    'select_button2': [],
+    'select_button3': [],
+    'select_button4': []
+}
+
 #Initialise app and window.
 myapp = QApplication(sys.argv)
 display = QWidget()
@@ -32,7 +41,14 @@ def home_window():
     )
     home_image.setAlignment(QtCore.Qt.AlignCenter)
     home_image.setStyleSheet('margin-top: 0;')
-    coords.addWidget(home_image, 0, 0, 1, 4)
+    gwdict ['home_image'].append(home_image)
+    coords.addWidget(
+        gwdict ['home_image'] [-1],
+        0,
+        0,
+        1,
+        4
+    )
 
     #Create button options.
     select_button1 = QPushButton(
@@ -52,7 +68,12 @@ def home_window():
             QtCore.Qt.PointingHandCursor
         )
     )
-    coords.addWidget(select_button1, 2, 0)
+    gwdict ['select_button1'].append(select_button1)
+    coords.addWidget(
+        gwdict ['select_button1'] [-1],
+        2,
+        0
+    )
 
     select_button2 = QPushButton(
         'Plot with Modulus Contours'
@@ -71,8 +92,12 @@ def home_window():
             QtCore.Qt.PointingHandCursor
         )
     )
-    coords.addWidget(select_button2, 2, 1)
-
+    gwdict ['select_button2'].append(select_button2)
+    coords.addWidget(
+        gwdict ['select_button2'] [-1],
+        2,
+        1
+    )
 
     select_button3 = QPushButton(
         'Plot with Phase/Modulus Contours'
@@ -91,8 +116,12 @@ def home_window():
             QtCore.Qt.PointingHandCursor
         )
     )
-    coords.addWidget(select_button3, 2, 2)
-
+    gwdict ['select_button3'].append(select_button3)
+    coords.addWidget(
+        gwdict ['select_button3'] [-1],
+        2,
+        2
+    )
 
     select_button4 = QPushButton(
         'Multiple Plots'
@@ -111,8 +140,12 @@ def home_window():
             QtCore.Qt.PointingHandCursor
         )
     )
-    coords.addWidget(select_button4, 2, 3)
-
+    gwdict ['select_button4'].append(select_button4)
+    coords.addWidget(
+        gwdict ['select_button4'] [-1],
+        2,
+        3
+    )
     #Add infotext.
 
 
