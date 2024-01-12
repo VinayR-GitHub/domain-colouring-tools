@@ -1,9 +1,9 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWidget, QFileDialog, QGridLayout
+from PyQt5.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWidget, QFileDialog, QGridLayout, QSlider
 from PyQt5.QtGui import QPixmap
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import QCursor
-from qtrangeslider import QRangeSlider
+
 
 #Initialise global widgets dict.
 gwdict = {
@@ -38,44 +38,75 @@ gwdict = {
 }
 
 #Create a box widget (customised).
-class RectangleSelect(QWidget):
+class QRectangleSelect(QWidget):
     def __init__(self, title, *args, **kwargs): 
         super().__init__(*args, **kwargs) 
         self.layout = QGridLayout() 
         self.setLayout(self.layout) 
-        self.slider1 = QRangeSlider()
-        self.slider2 = QRangeSlider()
+        self.slider1 = QSlider()
+        self.slider2 = QSlider()
+        self.slider3 = QSlider()
+        self.slider4 = QSlider()
         self.title = QLabel()
         self.title.setText(title)
         self.label1 = QLabel()
-        self.label1.setText('Real Boundaries')
+        self.label1.setText('Lower Real')
         self.label2 = QLabel()
-        self.label2.setText('Imaginary Boundaries')
+        self.label2.setText('Upper Real')
+        self.label3 = QLabel()
+        self.label3.setText('Lower Imaginary')
+        self.label4 = QLabel()
+        self.label4.setText('Upper Imaginary')
         self.layout.addWidget(
             self.title,
             0,
-            0
+            0,
+            1,
+            4
         )
+
         self.layout.addWidget(
-            self.label1,
+            self.slider1,
             1,
             0
         )
         self.layout.addWidget(
-            self.slider1,
+            self.slider2,
+            1,
+            1
+        )
+        self.layout.addWidget(
+            self.slider3,
+            1,
+            2
+        )
+        self.layout.addWidget(
+            self.slider4,
+            1,
+            3
+        )
+
+        self.layout.addWidget(
+            self.label1,
             2,
             0
         )
         self.layout.addWidget(
             self.label2,
-            3,
-            0
+            2,
+            1
         )
         self.layout.addWidget(
-            self.slider2,
-            4,
-            0
+            self.label3,
+            2,
+            2
         )
+        self.layout.addWidget(
+            self.label4,
+            2,
+            3
+        )
+
 
 #Initialise app and window.
 myapp = QApplication(sys.argv)
@@ -83,7 +114,7 @@ display = QWidget()
 
 #Initialise window features.
 display.setWindowTitle('Domain Colouring Tools')
-display.setStyleSheet('background: #191213;')
+display.setStyleSheet('background: #0F0F00;')
 display.setWindowIcon(
     QtGui.QIcon(
         'assets/imgico.jpg'
@@ -247,7 +278,13 @@ def sel_1_entry():
     # Function (text)
     # Saturation (dial)
     # Acuity (integer text)
-    pass
+    sel1box = QRectangleSelect('Function Domain')
+    gwdict ['sel1box'].append(sel1box)
+    coords.addWidget(
+        gwdict ['sel1box'] [-1],
+        0,
+        0
+    )
 
 def sel_2_entry():
     # Data requirements:
@@ -279,7 +316,7 @@ def sel_4_entry():
     pass
 
 
-home_window()
+sel_1_entry()
 
 
 #Display and exit window.
