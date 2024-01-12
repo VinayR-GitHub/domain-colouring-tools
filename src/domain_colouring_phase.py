@@ -150,9 +150,7 @@ def user_mapping(colmap):
     pair = bool(
         input("Pair viewing: ") #Takes only True/False.
     )
-    if pair == False:
-        pass
-    elif pair == True:
+    if pair == True:
         z_dim = [
             float(
                 input("Lower real boundary for identity: ")
@@ -167,17 +165,7 @@ def user_mapping(colmap):
                 input("Upper imaginary boundary for identity: ")
             )
         ]
-    if pair == False:
-        domain_plot(
-            colmap,
-            f,
-            dim_Re,
-            dim_Im,
-            title,
-            sat,
-            A
-        )
-    elif pair == True:
+    if pair == True:
         pairview(
             dim_Re,
             dim_Im,
