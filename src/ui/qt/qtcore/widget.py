@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWid
 from PyQt5.QtGui import QPixmap
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import QCursor
+from qtrangeslider import QRangeSlider
 
 #Initialise global widgets dict.
 gwdict = {
@@ -12,27 +13,69 @@ gwdict = {
     'select_button3': [],
     'select_button4': [],
     'base_info': [],
-    'sel1': [],
-    'sel2': [],
-    'sel3': [],
-    'sel4': [],
-    'sel1': [],
-    'sel2': [],
-    'sel3': [],
-    'sel4': [],
-    'sel1': [],
-    'sel2': [],
-    'sel3': [],
-    'sel4': [],
-    'sel1': [],
-    'sel2': [],
-    'sel3': [],
-    'sel4': [],
-    'sel1': [],
-    'sel2': [],
-    'sel3': [],
-    'sel4': [],
+    'sel1box': [],
+    'sel2box': [],
+    'sel3box': [],
+    'sel4box': [],
+    'sel1idbox': [],
+    'sel2idbox': [],
+    'sel3idbox': [],
+    'sel4idbox': [],
+    'sel1func': [],
+    'sel2func': [],
+    'sel3func': [],
+    'sel4func': [],
+    'sel1sat': [],
+    'sel2sat': [],
+    'sel3sat': [],
+    'sel4sat': [],
+    'sel1acu': [],
+    'sel2acu': [],
+    'sel3acu': [],
+    'sel4acu': [],
+    'sel2contour': [],
+    'sel4contour': []
 }
+
+#Create a box widget (customised).
+class RectangleSelect(QWidget):
+    def __init__(self, title, *args, **kwargs): 
+        super().__init__(*args, **kwargs) 
+        self.layout = QGridLayout() 
+        self.setLayout(self.layout) 
+        self.slider1 = QRangeSlider()
+        self.slider2 = QRangeSlider()
+        self.title = QLabel()
+        self.title.setText(title)
+        self.label1 = QLabel()
+        self.label1.setText('Real Boundaries')
+        self.label2 = QLabel()
+        self.label2.setText('Imaginary Boundaries')
+        self.layout.addWidget(
+            self.title,
+            0,
+            0
+        )
+        self.layout.addWidget(
+            self.label1,
+            1,
+            0
+        )
+        self.layout.addWidget(
+            self.slider1,
+            2,
+            0
+        )
+        self.layout.addWidget(
+            self.label2,
+            3,
+            0
+        )
+        self.layout.addWidget(
+            self.slider2,
+            4,
+            0
+        )
 
 #Initialise app and window.
 myapp = QApplication(sys.argv)
@@ -198,15 +241,41 @@ def home_window():
     )
 
 def sel_1_entry():
+    # Data requirements:
+    # Box (ReL, ReU, ImL, ImU) (???)
+    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    # Function (text)
+    # Saturation (dial)
+    # Acuity (integer text)
     pass
 
 def sel_2_entry():
+    # Data requirements:
+    # Box (ReL, ReU, ImL, ImU) (???)
+    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    # Function (text)
+    # Saturation (dial)
+    # Acuity (integer text)
+    # Contour Base (slider)
     pass
 
 def sel_3_entry():
+    # Data requirements:
+    # Box (ReL, ReU, ImL, ImU) (???)
+    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    # Function (text)
+    # Saturation (dial)
+    # Acuity (integer text)
     pass
 
 def sel_4_entry():
+    # Data requirements:
+    # Box (ReL, ReU, ImL, ImU) (???)
+    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    # Function (text)
+    # Saturation (dial)
+    # Acuity (integer text)
+    # Contour Base (slider)
     pass
 
 
