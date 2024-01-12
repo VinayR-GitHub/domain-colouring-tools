@@ -15,7 +15,6 @@ def absolute_grading(z):
     )
 
 def eval_func(f, dim_Re, dim_Im, A):
-    """Where {f} is a function of z, {dim_Re} and {dim_Im} are lists outlining the rectangular graphing domain, and {A} represents the number of points in each unit interval."""
     hei = dim_Im [1] - dim_Im [0]
     len = dim_Re [1] - dim_Re [0]
     h_res = A * hei
@@ -35,7 +34,6 @@ def eval_func(f, dim_Re, dim_Im, A):
     return f(z)
 
 def colour_map(vals, sat):
-    """{vals} represents a dataset of values, {sat} represents the colour saturation in the HSV system."""
     h_vals = hue(vals)
     m_val = 0.7
     M_val = 1
@@ -59,16 +57,15 @@ def colour_map(vals, sat):
     )
     return colsys.hsv_to_rgb(col_hsv)
 
-def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500):
-    """Where {f} is a function over z, {dim_Re} and {dim_Im} outline the dimensions of the rectangular domain, {sat} represents saturation, and {A} represents unit interval acuity."""
+def domain_plot(colmap, f, dim_Re, dim_Im, title = '', sat = 1, A = 500):
     vals = eval_func(f, dim_Re, dim_Im, A)
     cols = colmap(vals, sat)
-    mpl.xlabel("$\Re(z)$")
-    mpl.ylabel("$\Im(z)$")
+    mpl.xlabel('$\Re(z)$')
+    mpl.ylabel('$\Im(z)$')
     mpl.title(title)
     mpl.imshow(
         cols,
-        origin = "lower",
+        origin = 'lower',
         extent = [
             dim_Re [0],
             dim_Re [1],
@@ -77,8 +74,7 @@ def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500):
         ]
     )
 
-def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], sat = 1, A = 500):
-    """Where {f} is a function over z, {dim_Re}, {dim_Im}, and {z_dim} outline the dimensions of the rectangular domain, {sat} represents saturation, {A} represents unit interval acuity."""
+def pairview(dim_Re, dim_Im, colmap, f, title = '', z_dim = [-10, 10, -10, 10], sat = 1, A = 500):
     mpl.rcParams['figure.figsize'] = 8, 5
     mpl.subplot(1, 2, 1)
     domain_plot(
@@ -96,7 +92,7 @@ def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], 
         identity := lambda z: z,
         [z_dim [0], z_dim [1]],
         [z_dim [2], z_dim [3]],
-        "$f(z)=z$",
+        '$f(z)=z$',
         sat,
         A
     )
@@ -104,61 +100,60 @@ def pairview(dim_Re, dim_Im, colmap, f, title = "", z_dim = [-10, 10, -10, 10], 
 
 def file_settings():
     if bool(
-        input("Save file: ")
+        input('Save file: ')
     ) == False:
         return [
             None,
             None
         ]
     else:
-        file_name = input("File name: ")
-        file_type = "." + input("File type: ") #Do not use full stop in file type.
+        file_name = input('File name: ')
+        file_type = '.' + input('File type: ') #Do not use full stop in file type.
     return [
         file_name,
         file_type
     ]
 
 def user_mapping(colmap, input_list):
-    """Where {colmap} defines a colour mapping schema."""
-    func = input("f(z) = ")
+    func = input('f(z) = ')
     f = lambda z: eval(
         func
     )
-    title = f"${f'f(z)={func}'.replace('**', '^')}$"
+    title = f'${f'f(z)={func}'.replace('**', '^')}$'
     sat = float(
-        input("Saturation: ")
+        input('Saturation: ')
     )
     A = int(
-        input("Resolution/acuity: ")
+        input('Resolution/acuity: ')
     )
     dim_Re = [
         float(
-            input("Lower real boundary: ")
+            input('Lower real boundary: ')
         ),
         float(
-            input("Upper real boundary: ")
+            input('Upper real boundary: ')
         )
     ]
     dim_Im = [
         float(
-            input("Lower imaginary boundary: ")
+            input('Lower imaginary boundary: ')
         ),
         float(
-            input("Upper imaginary boundary: ")
+            input('Upper imaginary boundary: ')
         )
     ]
     z_dim = [
         float(
-            input("Lower real boundary for identity: ")
+            input('Lower real boundary for identity: ')
         ),
         float(
-            input("Upper real boundary for identity: ")
+            input('Upper real boundary for identity: ')
         ),
         float(
-            input("Lower imaginary boundary for identity: ")
+            input('Lower imaginary boundary for identity: ')
         ),
         float(
-            input("Upper imaginary boundary for identity: ")
+            input('Upper imaginary boundary for identity: ')
         )
     ]
     pairview(

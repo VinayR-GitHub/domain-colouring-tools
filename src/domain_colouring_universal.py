@@ -15,7 +15,6 @@ def absolute_grading(z):
     )
 
 def eval_func(f, dim_Re, dim_Im, A):
-    """Where {f} is a function of z, {dim_Re} and {dim_Im} are lists outlining the rectangular graphing domain, and {A} represents the number of points in each unit interval."""
     hei = dim_Im [1] - dim_Im [0]
     len = dim_Re [1] - dim_Re [0]
     h_res = A * hei
@@ -35,7 +34,6 @@ def eval_func(f, dim_Re, dim_Im, A):
     return f(z)
 
 def colour_map_co(vals, sat):
-    """{vals} represents a dataset of values, {sat} represents the colour saturation in the HSV system."""
     h_vals = hue(vals)
     s_vals = sat * np.ones(
         h_vals.shape
@@ -49,7 +47,6 @@ def colour_map_co(vals, sat):
     return colsys.hsv_to_rgb(col_hsv)
 
 def colour_map_wm(vals, sat, power = 2):
-    """{vals} represents a dataset of values, {sat} represents the colour saturation in the HSV system, and {power} represents the base of the contour plot schema."""
     h_vals = hue(vals)
     s_vals = sat * np.ones(
         h_vals.shape
@@ -68,7 +65,6 @@ def colour_map_wm(vals, sat, power = 2):
     return colsys.hsv_to_rgb(col_hsv)
 
 def colour_map_ph(vals, sat):
-    """{vals} represents a dataset of values, {sat} represents the colour saturation in the HSV system."""
     h_vals = hue(vals)
     m_val = 0.7
     M_val = 1
@@ -92,19 +88,18 @@ def colour_map_ph(vals, sat):
     )
     return colsys.hsv_to_rgb(col_hsv)
 
-def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500, contour = False, power = 2):
-    """Where {f} is a function over z, {dim_Re} and {dim_Im} outline the dimensions of the rectangular domain, {sat} represents saturation, and {A} represents unit interval acuity."""
+def domain_plot(colmap, f, dim_Re, dim_Im, title = '', sat = 1, A = 500, contour = False, power = 2):
     vals = eval_func(f, dim_Re, dim_Im, A)
     if contour == True:
         cols = colmap(vals, sat, power)
     else:
         cols = colmap(vals, sat)
-    mpl.xlabel("$\Re(z)$")
-    mpl.ylabel("$\Im(z)$")
+    mpl.xlabel('$\Re(z)$')
+    mpl.ylabel('$\Im(z)$')
     mpl.title(title)
     mpl.imshow(
         cols,
-        origin = "lower",
+        origin = 'lower',
         extent = [
             dim_Re [0],
             dim_Re [1],
@@ -114,57 +109,56 @@ def domain_plot(colmap, f, dim_Re, dim_Im, title = "", sat = 1, A = 500, contour
     )
 
 def file_settings():
-    file_name = input("File name: ")
-    file_type = "." + input("File type: ") #Do not use full stop in file type.
+    file_name = input('File name: ')
+    file_type = '.' + input('File type: ') #Do not use full stop in file type.
     return [
         file_name,
         file_type
     ]
 
 def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
-    """Where {colmap} variants define a colour mapping schema."""
-    func = input("f(z) = ")
+    func = input('f(z) = ')
     f = lambda z: eval(
         func
     )
-    title = f"${f'f(z)={func}'.replace('**', '^')}$"
+    title = f'${f'f(z)={func}'.replace('**', '^')}$'
     sat = float(
-        input("Saturation: ")
+        input('Saturation: ')
     )
     A = int(
-        input("Resolution/acuity: ")
+        input('Resolution/acuity: ')
     )
     power = float(
-        input("Contour gradation power: ")
+        input('Contour gradation power: ')
     )
     dim_Re = [
         float(
-            input("Lower real boundary: ")
+            input('Lower real boundary: ')
         ),
         float(
-            input("Upper real boundary: ")
+            input('Upper real boundary: ')
         )
     ]
     dim_Im = [
         float(
-            input("Lower imaginary boundary: ")
+            input('Lower imaginary boundary: ')
         ),
         float(
-            input("Upper imaginary boundary: ")
+            input('Upper imaginary boundary: ')
         )
     ]
     z_dim = [
         float(
-            input("Lower real boundary for identity: ")
+            input('Lower real boundary for identity: ')
         ),
         float(
-            input("Upper real boundary for identity: ")
+            input('Upper real boundary for identity: ')
         ),
         float(
-            input("Lower imaginary boundary for identity: ")
+            input('Lower imaginary boundary for identity: ')
         ),
         float(
-            input("Upper imaginary boundary for identity: ")
+            input('Upper imaginary boundary for identity: ')
         )
     ]
     mpl.rcParams['figure.figsize'] = 18, 11
@@ -208,7 +202,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
         identity := lambda z: z,
         [z_dim [0], z_dim [1]],
         [z_dim [2], z_dim [3]],
-        "$f(z)=z$",
+        '$f(z)=z$',
         sat,
         A,
         False
@@ -219,7 +213,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
         identity := lambda z: z,
         [z_dim [0], z_dim [1]],
         [z_dim [2], z_dim [3]],
-        "$f(z)=z$",
+        '$f(z)=z$',
         sat,
         A,
         True,
@@ -231,7 +225,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
         identity := lambda z: z,
         [z_dim [0], z_dim [1]],
         [z_dim [2], z_dim [3]],
-        "$f(z)=z$",
+        '$f(z)=z$',
         sat,
         A,
         False

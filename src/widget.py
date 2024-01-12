@@ -490,3 +490,22 @@ display.showMaximized()
 sys.exit(
     myapp.exec()
 )
+
+"""
+    Notes to self:
+    domain_colouring_{insert_type}.input_list is a dict of the form:
+        {
+            'sat': ~,
+            'acu': ~,
+            'cgp': ~,
+            'rel': ~,
+            'reu': ~,
+            'iml': ~,
+            'imu': ~,
+            'relid': ~,
+            'reuid': ~,
+            'imlid': ~,
+            'imuid': ~,
+            'func (NP)': ~
+        }
+"""
