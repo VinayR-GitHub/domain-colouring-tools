@@ -104,56 +104,31 @@ def file_settings():
     ]
 
 def user_mapping(colmap, input_list):
-    func = input('f(z) = ')
+    func = input('func (NP)')
     f = lambda z: eval(
-        func
+        processing(func) #Have yet to define.
     )
     title = f'${f'f(z)={func}'.replace('**', '^')}$'
-    sat = float(
-        input('Saturation: ')
-    )
-    A = int(
-        input('Resolution/acuity: ')
-    )
-    dim_Re = [
-        float(
-            input('Lower real boundary: ')
-        ),
-        float(
-            input('Upper real boundary: ')
-        )
-    ]
-    dim_Im = [
-        float(
-            input('Lower imaginary boundary: ')
-        ),
-        float(
-            input('Upper imaginary boundary: ')
-        )
-    ]
-    z_dim = [
-        float(
-            input('Lower real boundary for identity: ')
-        ),
-        float(
-            input('Upper real boundary for identity: ')
-        ),
-        float(
-            input('Lower imaginary boundary for identity: ')
-        ),
-        float(
-            input('Upper imaginary boundary for identity: ')
-        )
-    ]
     pairview(
-        dim_Re,
-        dim_Im,
+        [
+            input_list ['rel'],
+            input_list ['reu']
+        ],
+        [
+            input_list ['iml'],
+            input_list ['imu']
+        ],
         colmap,
         f,
         title,
-        z_dim,
-        sat,
-        A
+        [
+            input_list ['relid'],
+            input_list ['reuid'],
+            input_list ['imlid'],
+            input_list ['imuid'],
+        ],
+        input_list ['sat'],
+        input_list ['acu']
     )
     settings = file_settings()
     if settings [0] == None:
