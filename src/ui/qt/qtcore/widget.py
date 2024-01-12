@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWidget, QFileDialog, QGridLayout, QSlider
+from PyQt5.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWidget, QFileDialog, QGridLayout, QSlider, QLineEdit
 from PyQt5.QtGui import QPixmap
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import QCursor
@@ -24,6 +24,10 @@ gwdict = {
     'sel2func': [],
     'sel3func': [],
     'sel4func': [],
+    'sel1funclab': [],
+    'sel2funclab': [],
+    'sel3funclab': [],
+    'sel4funclab': [],
     'sel1sat': [],
     'sel2sat': [],
     'sel3sat': [],
@@ -141,8 +145,6 @@ def home_window():
         4
     )
 
-    ########################################
-
     #Create button options.
     select_button1 = QPushButton(
         'Standard Plot'
@@ -237,8 +239,6 @@ def home_window():
         3
     )
 
-    ########################################
-
     #Add infotext.
     base_info = QLabel()
     base_info.setText(
@@ -268,12 +268,15 @@ def home_window():
     )
 
 def sel_1_entry():
-    # Function (text)
     # Saturation (dial)
     # Acuity (integer text)
 
-    # Box (ReL, ReU, ImL, ImU) (???)
+    # Box (ReL, ReU, ImL, ImU) (rectselect)
     sel1box = QRectangleSelect('Function Domain')
+    sel1box.setStyleSheet(
+        '* {border: 3px solid "#FFFFFF";' +
+        'border-radius: 3px;}'
+    )
     gwdict ['sel1box'].append(sel1box)
     coords.addWidget(
         gwdict ['sel1box'] [-1],
@@ -281,8 +284,12 @@ def sel_1_entry():
         0
     )
 
-    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    # Identity Box (ReL, ReU, ImL, ImU) (rectselect))
     sel1idbox = QRectangleSelect('Identity Domain')
+    sel1idbox.setStyleSheet(
+        '* {border: 3px solid "#FFFFFF";' +
+        'border-radius: 3px;}'
+    )
     gwdict ['sel1idbox'].append(sel1idbox)
     coords.addWidget(
         gwdict ['sel1idbox'] [-1],
@@ -290,14 +297,37 @@ def sel_1_entry():
         1
     )
 
-def sel_2_entry():
+    #Label (function)
+    sel1funclab = QLabel()
+    sel1funclab.setText('Function:')
+    gwdict ['sel1funclab'].append(sel1funclab)
+    coords.addWidget(
+        gwdict ['sel1funclab'] [-1],
+        0,
+        2
+    )
+
     # Function (text)
+    sel1func = QLineEdit()
+    sel1func.setText('f(z) = ')
+    gwdict ['sel1func'].append(sel1func)
+    coords.addWidget(
+        gwdict ['sel1func'] [-1],
+        0,
+        3
+    )
+
+def sel_2_entry():
     # Saturation (dial)
     # Acuity (integer text)
     # Contour Base (slider)
 
-    # Box (ReL, ReU, ImL, ImU) (???)
+    # Box (ReL, ReU, ImL, ImU) (rectselect)
     sel2box = QRectangleSelect('Function Domain')
+    sel2box.setStyleSheet(
+        '* {border: 3px solid "#FFFFFF";' +
+        'border-radius: 3px;}'
+    )
     gwdict ['sel2box'].append(sel2box)
     coords.addWidget(
         gwdict ['sel2box'] [-1],
@@ -305,8 +335,12 @@ def sel_2_entry():
         0
     )
 
-    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    # Identity Box (ReL, ReU, ImL, ImU) (rectselect)
     sel2idbox = QRectangleSelect('Function Domain')
+    sel2idbox.setStyleSheet(
+        '* {border: 3px solid "#FFFFFF";' +
+        'border-radius: 3px;}'
+    )
     gwdict ['sel2idbox'].append(sel2idbox)
     coords.addWidget(
         gwdict ['sel2idbox'] [-1],
@@ -314,13 +348,36 @@ def sel_2_entry():
         1
     )
 
-def sel_3_entry():
+    #Label (function)
+    sel2funclab = QLabel()
+    sel2funclab.setText('Function:')
+    gwdict ['sel2funclab'].append(sel2funclab)
+    coords.addWidget(
+        gwdict ['sel2funclab'] [-1],
+        0,
+        2
+    )
+
     # Function (text)
+    sel2func = QLineEdit()
+    sel2func.setText('f(z) = ')
+    gwdict ['sel2func'].append(sel2func)
+    coords.addWidget(
+        gwdict ['sel2func'] [-1],
+        0,
+        3
+    )
+
+def sel_3_entry():
     # Saturation (dial)
     # Acuity (integer text)
 
-    # Box (ReL, ReU, ImL, ImU) (???)
+    # Box (ReL, ReU, ImL, ImU) (rectselect)
     sel3box = QRectangleSelect('Function Domain')
+    sel3box.setStyleSheet(
+        '* {border: 3px solid "#FFFFFF";' +
+        'border-radius: 3px;}'
+    )
     gwdict ['sel3box'].append(sel3box)
     coords.addWidget(
         gwdict ['sel3box'] [-1],
@@ -328,8 +385,12 @@ def sel_3_entry():
         0
     )
 
-    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    # Identity Box (ReL, ReU, ImL, ImU) (rectselect)
     sel3idbox = QRectangleSelect('Function Domain')
+    sel3idbox.setStyleSheet(
+        '* {border: 3px solid "#FFFFFF";' +
+        'border-radius: 3px;}'
+    )
     gwdict ['sel3idbox'].append(sel3idbox)
     coords.addWidget(
         gwdict ['sel3idbox'] [-1],
@@ -337,14 +398,37 @@ def sel_3_entry():
         1
     )
 
-def sel_4_entry():
+    #Label (function)
+    sel3funclab = QLabel()
+    sel3funclab.setText('Function:')
+    gwdict ['sel3funclab'].append(sel3funclab)
+    coords.addWidget(
+        gwdict ['sel3funclab'] [-1],
+        0,
+        2
+    )
+
     # Function (text)
+    sel3func = QLineEdit()
+    sel3func.setText('f(z) = ')
+    gwdict ['sel3func'].append(sel3func)
+    coords.addWidget(
+        gwdict ['sel3func'] [-1],
+        0,
+        3
+    )
+
+def sel_4_entry():
     # Saturation (dial)
     # Acuity (integer text)
     # Contour Base (slider)
 
-    # Box (ReL, ReU, ImL, ImU) (???)
+    # Box (ReL, ReU, ImL, ImU) (rectselect)
     sel4box = QRectangleSelect('Function Domain')
+    sel4box.setStyleSheet(
+        '* {border: 3px solid "#FFFFFF";' +
+        'border-radius: 3px;}'
+    )
     gwdict ['sel4box'].append(sel4box)
     coords.addWidget(
         gwdict ['sel4box'] [-1],
@@ -352,13 +436,37 @@ def sel_4_entry():
         0
     )
 
-    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    # Identity Box (ReL, ReU, ImL, ImU) (rectselect)
     sel4idbox = QRectangleSelect('Function Domain')
+    sel4idbox.setStyleSheet(
+        '* {border: 3px solid "#FFFFFF";' +
+        'border-radius: 3px;}'
+    )
     gwdict ['sel4idbox'].append(sel4idbox)
     coords.addWidget(
         gwdict ['sel4idbox'] [-1],
         0,
         1
+    )
+
+    #Label (function)
+    sel4funclab = QLabel()
+    sel4funclab.setText('Function:')
+    gwdict ['sel4funclab'].append(sel4funclab)
+    coords.addWidget(
+        gwdict ['sel4funclab'] [-1],
+        0,
+        2
+    )
+
+    # Function (text)
+    sel4func = QLineEdit()
+    sel4func.setText('f(z) = ')
+    gwdict ['sel4func'].append(sel4func)
+    coords.addWidget(
+        gwdict ['sel4func'] [-1],
+        0,
+        3
     )
 
 
