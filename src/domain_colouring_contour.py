@@ -108,7 +108,7 @@ def file_settings():
         file_type
     ]
 
-def user_mapping(colmap):
+def user_mapping(colmap, input_list):
     """Where {colmap} defines a colour mapping schema."""
     func = input("f(z) = ")
     f = lambda z: eval(
@@ -140,41 +140,34 @@ def user_mapping(colmap):
             input("Upper imaginary boundary: ")
         )
     ]
-    pair = bool(
-        input("Pair viewing: ") #Takes only True/False.
-    )
-    if pair == True:
-        z_dim = [
-            float(
-                input("Lower real boundary for identity: ")
-            ),
-            float(
-                input("Upper real boundary for identity: ")
-            ),
-            float(
-                input("Lower imaginary boundary for identity: ")
-            ),
-            float(
-                input("Upper imaginary boundary for identity: ")
-            )
-        ]
-    if pair == True:
-        pairview(
-            dim_Re,
-            dim_Im,
-            colmap,
-            f,
-            title,
-            z_dim,
-            sat,
-            A,
-            power
+    z_dim = [
+        float(
+            input("Lower real boundary for identity: ")
+        ),
+        float(
+            input("Upper real boundary for identity: ")
+        ),
+        float(
+            input("Lower imaginary boundary for identity: ")
+        ),
+        float(
+            input("Upper imaginary boundary for identity: ")
         )
+    ]
+    pairview(
+        dim_Re,
+        dim_Im,
+        colmap,
+        f,
+        title,
+        z_dim,
+        sat,
+        A,
+        power
+    )
     settings = file_settings()
     if settings [0] == None:
         mpl.show()
     else:
         mpl.savefig(settings [0] + settings [1])
         mpl.show()
-
-user_mapping(colour_map_wm)

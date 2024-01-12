@@ -469,6 +469,18 @@ def sel_4_entry():
         3
     )
 
+def sel_1_display():
+    pass
+
+def sel_2_display():
+    pass
+
+def sel_3_display():
+    pass
+
+def sel_4_display():
+    pass
+
 
 sel_1_entry()
 

@@ -121,7 +121,7 @@ def file_settings():
         file_type
     ]
 
-def user_mapping(colmap_co, colmap_wm, colmap_ph):
+def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
     """Where {colmap} variants define a colour mapping schema."""
     func = input("f(z) = ")
     f = lambda z: eval(
@@ -240,9 +240,3 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph):
     settings = file_settings()
     mpl.savefig(settings [0] + settings [1])
     mpl.show()
-
-user_mapping(
-    colour_map_co,
-    colour_map_wm,
-    colour_map_ph
-)
