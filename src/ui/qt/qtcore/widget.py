@@ -4,7 +4,6 @@ from PyQt5.QtGui import QPixmap
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import QCursor
 
-
 #Initialise global widgets dict.
 gwdict = {
     'home_image': [],
@@ -37,7 +36,7 @@ gwdict = {
     'sel4contour': []
 }
 
-#Create a box widget (customised).
+#Create a rect-box-selection widget (customised).
 class QRectangleSelect(QWidget):
     def __init__(self, title, *args, **kwargs): 
         super().__init__(*args, **kwargs) 
@@ -64,28 +63,6 @@ class QRectangleSelect(QWidget):
             1,
             4
         )
-
-        self.layout.addWidget(
-            self.slider1,
-            1,
-            0
-        )
-        self.layout.addWidget(
-            self.slider2,
-            1,
-            1
-        )
-        self.layout.addWidget(
-            self.slider3,
-            1,
-            2
-        )
-        self.layout.addWidget(
-            self.slider4,
-            1,
-            3
-        )
-
         self.layout.addWidget(
             self.label1,
             2,
@@ -106,7 +83,26 @@ class QRectangleSelect(QWidget):
             2,
             3
         )
-
+        self.layout.addWidget(
+            self.slider1,
+            1,
+            0
+        )
+        self.layout.addWidget(
+            self.slider2,
+            1,
+            1
+        )
+        self.layout.addWidget(
+            self.slider3,
+            1,
+            2
+        )
+        self.layout.addWidget(
+            self.slider4,
+            1,
+            3
+        )
 
 #Initialise app and window.
 myapp = QApplication(sys.argv)
@@ -272,12 +268,11 @@ def home_window():
     )
 
 def sel_1_entry():
-    # Data requirements:
-    # Box (ReL, ReU, ImL, ImU) (???)
-    # Identity Box (ReL, ReU, ImL, ImU) (???)
     # Function (text)
     # Saturation (dial)
     # Acuity (integer text)
+
+    # Box (ReL, ReU, ImL, ImU) (???)
     sel1box = QRectangleSelect('Function Domain')
     gwdict ['sel1box'].append(sel1box)
     coords.addWidget(
@@ -286,34 +281,85 @@ def sel_1_entry():
         0
     )
 
-def sel_2_entry():
-    # Data requirements:
-    # Box (ReL, ReU, ImL, ImU) (???)
     # Identity Box (ReL, ReU, ImL, ImU) (???)
+    sel1idbox = QRectangleSelect('Identity Domain')
+    gwdict ['sel1idbox'].append(sel1idbox)
+    coords.addWidget(
+        gwdict ['sel1idbox'] [-1],
+        0,
+        1
+    )
+
+def sel_2_entry():
     # Function (text)
     # Saturation (dial)
     # Acuity (integer text)
     # Contour Base (slider)
-    pass
+
+    # Box (ReL, ReU, ImL, ImU) (???)
+    sel2box = QRectangleSelect('Function Domain')
+    gwdict ['sel2box'].append(sel2box)
+    coords.addWidget(
+        gwdict ['sel2box'] [-1],
+        0,
+        0
+    )
+
+    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    sel2idbox = QRectangleSelect('Function Domain')
+    gwdict ['sel2idbox'].append(sel2idbox)
+    coords.addWidget(
+        gwdict ['sel2idbox'] [-1],
+        0,
+        1
+    )
 
 def sel_3_entry():
-    # Data requirements:
-    # Box (ReL, ReU, ImL, ImU) (???)
-    # Identity Box (ReL, ReU, ImL, ImU) (???)
     # Function (text)
     # Saturation (dial)
     # Acuity (integer text)
-    pass
+
+    # Box (ReL, ReU, ImL, ImU) (???)
+    sel3box = QRectangleSelect('Function Domain')
+    gwdict ['sel3box'].append(sel3box)
+    coords.addWidget(
+        gwdict ['sel3box'] [-1],
+        0,
+        0
+    )
+
+    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    sel3idbox = QRectangleSelect('Function Domain')
+    gwdict ['sel3idbox'].append(sel3idbox)
+    coords.addWidget(
+        gwdict ['sel3idbox'] [-1],
+        0,
+        1
+    )
 
 def sel_4_entry():
-    # Data requirements:
-    # Box (ReL, ReU, ImL, ImU) (???)
-    # Identity Box (ReL, ReU, ImL, ImU) (???)
     # Function (text)
     # Saturation (dial)
     # Acuity (integer text)
     # Contour Base (slider)
-    pass
+
+    # Box (ReL, ReU, ImL, ImU) (???)
+    sel4box = QRectangleSelect('Function Domain')
+    gwdict ['sel4box'].append(sel4box)
+    coords.addWidget(
+        gwdict ['sel4box'] [-1],
+        0,
+        0
+    )
+
+    # Identity Box (ReL, ReU, ImL, ImU) (???)
+    sel4idbox = QRectangleSelect('Function Domain')
+    gwdict ['sel4idbox'].append(sel4idbox)
+    coords.addWidget(
+        gwdict ['sel4idbox'] [-1],
+        0,
+        1
+    )
 
 
 sel_1_entry()
