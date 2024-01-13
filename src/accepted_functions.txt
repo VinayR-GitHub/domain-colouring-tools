@@ -1,32 +1,32 @@
-Sine: sin --> np.sin
-Cosine: cos --> np.cos
-Tangent: tan --> np.tan
-Arcsine: arcsin --> np.arcsin
-Arccosine: arccos --> np.arccos
-Arctangent: arctan --> np.arctan
-Hyperbolic sine: sinh --> np.sinh
-Hyperbolic cosine: cosh --> np.cosh
-Hyperbolic tangent: tanh --> np.tanh
-Hyperbolic arcsine: arcsinh --> np.arcsinh
-Hyperbolic arccosine: arccosh --> np.arccosh
-Hyperbolic arctangent: arctanh --> np.arctanh
-Exponential (base e): exp --> np.exp
-Natural logarithm: log --> np.log
-Logarithm (base 10): log10 --> np.log10
-Logarithm (base 2): log2 --> np.log2
-Normalised sinc: sinc --> np.sinc
-Modified bessel function of the first kind (n = 0): bessel0 --> np.i0
-Gamma function: gamma --> sp.special.gamma
-Beta function: beta --> sp.special.beta
-Digamma function: digamma --> sp.special.psi
-Polygamma function: polygamma --> sp.special.polygamma
-Euler-Riemann zeta function: zeta --> sp.special.zeta
-Argument: Arg --> np.angle
-Real component: Re --> np.real
-Imaginary component: Im --> np.imag
-Complex conjugate: conj --> np.conj
-Euler's number: e --> np.e
-Euler-Mascheroni constant: gamma --> np.euler_gamma
-Pi: pi --> np.pi
-Golden ratio: phi --> sp.constants.golden
+Sine: \sin --> np.sin
+Cosine: \cos --> np.cos
+Tangent: \tan --> np.tan
+Arcsine: \arcs --> np.arcsin
+Arccosine: \arcc --> np.arccos
+Arctangent: \arct --> np.arctan
+Hyperbolic sine: \snh --> np.sinh
+Hyperbolic cosine: \csh --> np.cosh
+Hyperbolic tangent: \tnh --> np.tanh
+Hyperbolic arcsine: \arcsnh --> np.arcsinh
+Hyperbolic arccosine: \arccsh --> np.arccosh
+Hyperbolic arctangent: \arctnh --> np.arctanh
+Exponential (base e): \Exp --> np.exp
+Natural logarithm: \Log --> np.log
+Logarithm (base 10): \log10 --> np.log10
+Logarithm (base 2): \log2 --> np.log2
+Normalised sinc: \Sinc --> np.sinc
+Modified bessel function of the first kind (n = 0): \bessel --> np.i0
+Gamma function: \Gamma --> sp.special.gamma
+Beta function: \beta --> sp.special.beta
+Digamma function: \digamma --> sp.special.psi
+Polygamma function: \polygamma --> sp.special.polygamma
+Euler-Riemann zeta function: \zeta --> sp.special.zeta
+Argument: \Arg --> np.angle
+Real component: \Re --> np.real
+Imaginary component: \Im --> np.imag
+Complex conjugate: \conj --> np.conj
+Euler's number: \e --> np.e
+Euler-Mascheroni constant: \gamma --> np.euler_gamma
+Pi: \pi --> np.pi
+Golden ratio: \phi --> sp.constants.golden
 Exponentiation: ^ --> **
