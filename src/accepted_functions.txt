@@ -1,9 +1,9 @@
 Sine: \sin --> np.sin
 Cosine: \cos --> np.cos
 Tangent: \tan --> np.tan
-Arcsine: \arcs --> np.arcsin
-Arccosine: \arcc --> np.arccos
-Arctangent: \arct --> np.arctan
+Arcsine: \arcsin --> np.arcsin
+Arccosine: \arccos --> np.arccos
+Arctangent: \arctan --> np.arctan
 Hyperbolic sine: \snh --> np.sinh
 Hyperbolic cosine: \csh --> np.cosh
 Hyperbolic tangent: \tnh --> np.tanh

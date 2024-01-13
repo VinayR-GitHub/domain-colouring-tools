@@ -30,6 +30,10 @@ gwdict = {
     'sel2funclab': [],
     'sel3funclab': [],
     'sel4funclab': [],
+    'sel1funckey': [],
+    'sel2funckey': [],
+    'sel3funckey': [],
+    'sel4funckey': [],
     'sel1sat': [],
     'sel2sat': [],
     'sel3sat': [],
@@ -319,6 +323,24 @@ def sel_1_entry():
         3
     )
 
+    #Label (accepted functions)
+    with open('src/accepted_functions.txt') as func_file:
+        acc = func_file.readlines()
+    sel1funckey = QLabel()
+    sel1funckey.setText(
+        ''.join(
+            (
+                term.split(' --> ') [0] + '\n'
+            ) for term in acc
+        ) [: -1]
+    )
+    gwdict ['sel1funckey'].append(sel1funckey)
+    coords.addWidget(
+        gwdict ['sel1funckey'] [-1],
+        0,
+        4
+    )
+
 def sel_2_entry():
     # Saturation (dial)
     # Acuity (integer text)
@@ -368,6 +390,24 @@ def sel_2_entry():
         gwdict ['sel2func'] [-1],
         0,
         3
+    )
+
+    #Label (accepted functions)
+    with open('src/accepted_functions.txt') as func_file:
+        acc = func_file.readlines()
+    sel2funckey = QLabel()
+    sel2funckey.setText(
+        ''.join(
+            (
+                term.split(' --> ') [0] + '\n'
+            ) for term in acc
+        ) [: -1]
+    )
+    gwdict ['sel2funckey'].append(sel2funckey)
+    coords.addWidget(
+        gwdict ['sel2funckey'] [-1],
+        0,
+        4
     )
 
 def sel_3_entry():
@@ -420,6 +460,24 @@ def sel_3_entry():
         3
     )
 
+    #Label (accepted functions)
+    with open('src/accepted_functions.txt') as func_file:
+        acc = func_file.readlines()
+    sel3funckey = QLabel()
+    sel3funckey.setText(
+        ''.join(
+            (
+                term.split(' --> ') [0] + '\n'
+            ) for term in acc
+        ) [: -1]
+    )
+    gwdict ['sel3funckey'].append(sel3funckey)
+    coords.addWidget(
+        gwdict ['sel3funckey'] [-1],
+        0,
+        4
+    )
+
 def sel_4_entry():
     # Saturation (dial)
     # Acuity (integer text)
@@ -469,6 +527,24 @@ def sel_4_entry():
         gwdict ['sel4func'] [-1],
         0,
         3
+    )
+
+    #Label (accepted functions)
+    with open('src/accepted_functions.txt') as func_file:
+        acc = func_file.readlines()
+    sel4funckey = QLabel()
+    sel4funckey.setText(
+        ''.join(
+            (
+                term.split(' --> ') [0] + '\n'
+            ) for term in acc
+        ) [: -1]
+    )
+    gwdict ['sel4funckey'].append(sel4funckey)
+    coords.addWidget(
+        gwdict ['sel4funckey'] [-1],
+        0,
+        4
     )
 
 def sel_1_display():
