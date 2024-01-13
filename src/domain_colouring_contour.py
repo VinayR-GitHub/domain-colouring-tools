@@ -1,6 +1,10 @@
+import sys
+sys.dont_write_bytecode = True
+
 import numpy as np
 import matplotlib.pyplot as mpl
 import matplotlib.colors as colsys
+import libfile
 
 def hue(z):
     return np.mod(
@@ -105,60 +109,32 @@ def file_settings():
     ]
 
 def user_mapping(colmap, input_list):
-    func = input('f(z) = ')
+    func = input_list('func (NP)')
     f = lambda z: eval(
-        func
+        libfile.processing(func) #Have yet to define.
     )
     title = f'${f'f(z)={func}'.replace('**', '^')}$'
-    sat = float(
-        input('Saturation: ')
-    )
-    A = int(
-        input('Resolution/acuity: ')
-    )
-    power = float(
-        input('Contour gradation power: ')
-    )
-    dim_Re = [
-        float(
-            input('Lower real boundary: ')
-        ),
-        float(
-            input('Upper real boundary: ')
-        )
-    ]
-    dim_Im = [
-        float(
-            input('Lower imaginary boundary: ')
-        ),
-        float(
-            input('Upper imaginary boundary: ')
-        )
-    ]
-    z_dim = [
-        float(
-            input('Lower real boundary for identity: ')
-        ),
-        float(
-            input('Upper real boundary for identity: ')
-        ),
-        float(
-            input('Lower imaginary boundary for identity: ')
-        ),
-        float(
-            input('Upper imaginary boundary for identity: ')
-        )
-    ]
     pairview(
-        dim_Re,
-        dim_Im,
+        [
+            input_list ['rel'],
+            input_list ['reu']
+        ],
+        [
+            input_list ['iml'],
+            input_list ['imu']
+        ],
         colmap,
         f,
         title,
-        z_dim,
-        sat,
-        A,
-        power
+        [
+            input_list ['relid'],
+            input_list ['reuid'],
+            input_list ['imlid'],
+            input_list ['imuid'],
+        ],
+        input_list ['sat'],
+        input_list ['acu'],
+        input_list ['cgp']
     )
     settings = file_settings()
     if settings [0] == None:

@@ -1,6 +1,10 @@
+import sys
+sys.dont_write_bytecode = True
+
 import numpy as np
 import matplotlib.pyplot as mpl
 import matplotlib.colors as colsys
+import libfile
 
 def hue(z):
     return np.mod(
@@ -104,9 +108,9 @@ def file_settings():
     ]
 
 def user_mapping(colmap, input_list):
-    func = input('func (NP)')
+    func = input_list('func (NP)')
     f = lambda z: eval(
-        processing(func) #Have yet to define.
+        libfile.processing(func) #Have yet to define.
     )
     title = f'${f'f(z)={func}'.replace('**', '^')}$'
     pairview(
