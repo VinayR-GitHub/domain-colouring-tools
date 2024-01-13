@@ -1,4 +1,6 @@
 import sys
+sys.dont_write_bytecode = True
+
 from PyQt5.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWidget, QFileDialog, QGridLayout, QSlider, QLineEdit
 from PyQt5.QtGui import QPixmap
 from PyQt5 import QtGui, QtCore

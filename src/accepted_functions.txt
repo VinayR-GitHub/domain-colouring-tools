@@ -1,33 +1,32 @@
-sine: sin --> np.sin
-cosine: cos --> np.cos
-tangent: tan --> np.tan
-
-arcsine: arcsin --> np.arcsin
-arccosine: arccos --> np.arccos
-arctangent: arctan --> np.arctan
-
-hyperbolic sine: sinh --> np.sinh
-hyperbolic cosine: cosh --> np.cosh
-hyperbolic tangent: tanh --> np.tanh
-
-hyperbolic arcsine: arcsinh --> np.arcsinh
-hyperbolic arccosine: arccosh --> np.arccosh
-hyperbolic arctangent: arctanh --> np.arctanh
-
-exponential (base e): exp --> np.exp
-
-natural logarithm: log --> np.log
-logarithm (base 10): log10 --> np.log10
-logarithm (base 2): log2 --> np.log2
-
-normalised sinc: sinc --> np.sinc
-modified bessel function of the first kind (n = 0): bessel0 --> np.i0
-
-argument: Arg --> np.angle
-real component: Re --> np.real
-imaginary component: Im --> np.imag
-complex conjugate: conj --> np.conj
-
+Sine: sin --> np.sin
+Cosine: cos --> np.cos
+Tangent: tan --> np.tan
+Arcsine: arcsin --> np.arcsin
+Arccosine: arccos --> np.arccos
+Arctangent: arctan --> np.arctan
+Hyperbolic sine: sinh --> np.sinh
+Hyperbolic cosine: cosh --> np.cosh
+Hyperbolic tangent: tanh --> np.tanh
+Hyperbolic arcsine: arcsinh --> np.arcsinh
+Hyperbolic arccosine: arccosh --> np.arccosh
+Hyperbolic arctangent: arctanh --> np.arctanh
+Exponential (base e): exp --> np.exp
+Natural logarithm: log --> np.log
+Logarithm (base 10): log10 --> np.log10
+Logarithm (base 2): log2 --> np.log2
+Normalised sinc: sinc --> np.sinc
+Modified bessel function of the first kind (n = 0): bessel0 --> np.i0
+Gamma function: gamma --> sp.special.gamma
+Beta function: beta --> sp.special.beta
+Digamma function: digamma --> sp.special.psi
+Polygamma function: polygamma --> sp.special.polygamma
+Euler-Riemann zeta function: zeta --> sp.special.zeta
+Argument: Arg --> np.angle
+Real component: Re --> np.real
+Imaginary component: Im --> np.imag
+Complex conjugate: conj --> np.conj
 Euler's number: e --> np.e
 Euler-Mascheroni constant: gamma --> np.euler_gamma
-pi: pi --> np.pi
+Pi: pi --> np.pi
+Golden ratio: phi --> sp.constants.golden
+Exponentiation: ^ --> **
