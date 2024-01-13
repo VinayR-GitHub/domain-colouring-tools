@@ -2,44 +2,14 @@ import numpy as np
 import scipy as sp
 import matplotlib.pyplot as mpl
 import matplotlib.colors as colsys
-
-def hue(z):
-    return np.mod(
-        np.angle(z) / (2 * np.pi) + 1,
-        1
-    )
-
-def absolute_grading(z):
-    grad = lambda x: (1 - 1 / (1 + x**2))**(1 / (1 + np.pi))
-    return grad(
-        np.absolute(z)
-    )
-
-def eval_func(f, dim_Re, dim_Im, A):
-    hei = dim_Im [1] - dim_Im [0]
-    len = dim_Re [1] - dim_Re [0]
-    h_res = A * hei
-    l_res = A * len
-    x = np.linspace(
-        dim_Re [0],
-        dim_Re [1],
-        int(l_res)
-    )
-    y = np.linspace(
-        dim_Im [0],
-        dim_Im [1],
-        int(h_res)
-    )
-    x, y = np.meshgrid(x, y)
-    z = x + (1j * y)
-    return f(z)
+import libfile
 
 def colour_map_co(vals, sat):
-    h_vals = hue(vals)
+    h_vals = libfile.hue(vals)
     s_vals = sat * np.ones(
         h_vals.shape
     )
-    v_vals = absolute_grading(
+    v_vals = libfile.absolute_grading(
         np.absolute(vals)
     )
     col_hsv = np.dstack(
@@ -48,7 +18,7 @@ def colour_map_co(vals, sat):
     return colsys.hsv_to_rgb(col_hsv)
 
 def colour_map_wm(vals, sat, power = 2):
-    h_vals = hue(vals)
+    h_vals = libfile.hue(vals)
     s_vals = sat * np.ones(
         h_vals.shape
     )
@@ -66,7 +36,7 @@ def colour_map_wm(vals, sat, power = 2):
     return colsys.hsv_to_rgb(col_hsv)
 
 def colour_map_ph(vals, sat):
-    h_vals = hue(vals)
+    h_vals = libfile.hue(vals)
     m_val = 0.7
     M_val = 1
     n_val = 15 #Optimal isochromatic quantity for analytic and conformal mappings.
@@ -90,7 +60,7 @@ def colour_map_ph(vals, sat):
     return colsys.hsv_to_rgb(col_hsv)
 
 def domain_plot(colmap, f, dim_Re, dim_Im, title = '', sat = 1, A = 500, contour = False, power = 2):
-    vals = eval_func(f, dim_Re, dim_Im, A)
+    vals = libfile.eval_func(f, dim_Re, dim_Im, A)
     if contour == True:
         cols = colmap(vals, sat, power)
     else:
