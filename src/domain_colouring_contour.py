@@ -25,27 +25,10 @@ def colour_map_wm(vals, sat, power = 2):
     )
     return colsys.hsv_to_rgb(col_hsv)
 
-def domain_plot(colmap, f, dim_Re, dim_Im, title = '', sat = 1, A = 500, power = 2):
-    vals = libfile.eval_func(f, dim_Re, dim_Im, A)
-    cols = colmap(vals, sat, power)
-    mpl.xlabel('$\Re(z)$')
-    mpl.ylabel('$\Im(z)$')
-    mpl.title(title)
-    mpl.imshow(
-        cols,
-        origin = 'lower',
-        extent = [
-            dim_Re [0],
-            dim_Re [1],
-            dim_Im [0],
-            dim_Im [1]
-        ]
-    )
-
 def pairview(dim_Re, dim_Im, colmap, f, title = '', z_dim = [-10, 10, -10, 10], sat = 1, A = 500, power = 2):
     mpl.rcParams['figure.figsize'] = 8, 5
     mpl.subplot(1, 2, 1)
-    domain_plot(
+    libfile.domain_plot(
         colmap,
         f,
         dim_Re,
@@ -53,10 +36,11 @@ def pairview(dim_Re, dim_Im, colmap, f, title = '', z_dim = [-10, 10, -10, 10], 
         title,
         sat,
         A,
-        power
+        power,
+        contour = True
     )
     mpl.subplot(1, 2, 2)
-    domain_plot(
+    libfile.domain_plot(
         colmap,
         identity := lambda z: z,
         [z_dim [0], z_dim [1]],
@@ -64,7 +48,8 @@ def pairview(dim_Re, dim_Im, colmap, f, title = '', z_dim = [-10, 10, -10, 10], 
         '$f(z)=z$',
         sat,
         A,
-        power
+        power,
+        contour = True
     )
     mpl.tight_layout()
 

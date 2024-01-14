@@ -3,6 +3,7 @@ sys.dont_write_bytecode = True
 
 import numpy as np
 import scipy as sp
+import matplotlib.pyplot as mpl
 
 def processing(func_string):
     with open('src/accepted_functions.txt') as func_file:
@@ -27,21 +28,41 @@ def absolute_grading(z):
         np.absolute(z)
     )
 
-def eval_func(f, dim_Re, dim_Im, A):
-    hei = dim_Im [1] - dim_Im [0]
-    len = dim_Re [1] - dim_Re [0]
-    h_res = A * hei
-    l_res = A * len
-    x = np.linspace(
-        dim_Re [0],
-        dim_Re [1],
-        int(l_res)
+def domain_plot(colmap, f, dim_Re, dim_Im, title = '', sat = 1, A = 500, contour = False, power = 2):
+    def eval_func(f, dim_Re, dim_Im, A):
+        hei = dim_Im [1] - dim_Im [0]
+        len = dim_Re [1] - dim_Re [0]
+        h_res = A * hei
+        l_res = A * len
+        x = np.linspace(
+            dim_Re [0],
+            dim_Re [1],
+            int(l_res)
+        )
+        y = np.linspace(
+            dim_Im [0],
+            dim_Im [1],
+            int(h_res)
+        )
+        x, y = np.meshgrid(x, y)
+        z = x + (1j * y)
+        return f(z)
+    
+    vals = eval_func(f, dim_Re, dim_Im, A)
+    if contour == True:
+        cols = colmap(vals, sat, power)
+    else:
+        cols = colmap(vals, sat)
+    mpl.xlabel('$\Re(z)$')
+    mpl.ylabel('$\Im(z)$')
+    mpl.title(title)
+    mpl.imshow(
+        cols,
+        origin = 'lower',
+        extent = [
+            dim_Re [0],
+            dim_Re [1],
+            dim_Im [0],
+            dim_Im [1]
+        ]
     )
-    y = np.linspace(
-        dim_Im [0],
-        dim_Im [1],
-        int(h_res)
-    )
-    x, y = np.meshgrid(x, y)
-    z = x + (1j * y)
-    return f(z)

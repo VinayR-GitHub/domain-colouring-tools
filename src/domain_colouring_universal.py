@@ -59,26 +59,6 @@ def colour_map_ph(vals, sat):
     )
     return colsys.hsv_to_rgb(col_hsv)
 
-def domain_plot(colmap, f, dim_Re, dim_Im, title = '', sat = 1, A = 500, contour = False, power = 2):
-    vals = libfile.eval_func(f, dim_Re, dim_Im, A)
-    if contour == True:
-        cols = colmap(vals, sat, power)
-    else:
-        cols = colmap(vals, sat)
-    mpl.xlabel('$\Re(z)$')
-    mpl.ylabel('$\Im(z)$')
-    mpl.title(title)
-    mpl.imshow(
-        cols,
-        origin = 'lower',
-        extent = [
-            dim_Re [0],
-            dim_Re [1],
-            dim_Im [0],
-            dim_Im [1]
-        ]
-    )
-
 def file_settings():
     file_name = input('File name: ')
     file_type = '.' + input('File type: ') #Do not use full stop in file type.
@@ -134,7 +114,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
     ]
     mpl.rcParams['figure.figsize'] = 18, 11
     mpl.subplot(2, 3, 1)
-    domain_plot(
+    libfile.domain_plot(
         colmap_co,
         f,
         dim_Re,
@@ -145,7 +125,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
         False
     )
     mpl.subplot(2, 3, 2)
-    domain_plot(
+    libfile.domain_plot(
         colmap_wm,
         f,
         dim_Re,
@@ -157,7 +137,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
         power
     )
     mpl.subplot(2, 3, 3)
-    domain_plot(
+    libfile.domain_plot(
         colmap_ph,
         f,
         dim_Re,
@@ -168,7 +148,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
         False
     )
     mpl.subplot(2, 3, 4)
-    domain_plot(
+    libfile.domain_plot(
         colmap_co,
         identity := lambda z: z,
         [z_dim [0], z_dim [1]],
@@ -179,7 +159,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
         False
     )
     mpl.subplot(2, 3, 5)
-    domain_plot(
+    libfile.domain_plot(
         colmap_wm,
         identity := lambda z: z,
         [z_dim [0], z_dim [1]],
@@ -191,7 +171,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
         power
     )
     mpl.subplot(2, 3, 6)
-    domain_plot(
+    libfile.domain_plot(
         colmap_ph,
         identity := lambda z: z,
         [z_dim [0], z_dim [1]],
