@@ -113,6 +113,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
         )
     ]
     mpl.rcParams['figure.figsize'] = 18, 11
+    identity = lambda z: z
     mpl.subplot(2, 3, 1)
     libfile.domain_plot(
         colmap_co,
@@ -150,7 +151,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
     mpl.subplot(2, 3, 4)
     libfile.domain_plot(
         colmap_co,
-        identity := lambda z: z,
+        identity,
         [z_dim [0], z_dim [1]],
         [z_dim [2], z_dim [3]],
         '$f(z)=z$',
@@ -161,7 +162,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
     mpl.subplot(2, 3, 5)
     libfile.domain_plot(
         colmap_wm,
-        identity := lambda z: z,
+        identity,
         [z_dim [0], z_dim [1]],
         [z_dim [2], z_dim [3]],
         '$f(z)=z$',
@@ -173,7 +174,7 @@ def user_mapping(colmap_co, colmap_wm, colmap_ph, input_list):
     mpl.subplot(2, 3, 6)
     libfile.domain_plot(
         colmap_ph,
-        identity := lambda z: z,
+        identity,
         [z_dim [0], z_dim [1]],
         [z_dim [2], z_dim [3]],
         '$f(z)=z$',

@@ -286,7 +286,9 @@ def sel_1_entry():
     coords.addWidget(
         gwdict ['sel1box'] [-1],
         0,
-        0
+        0,
+        4,
+        1
     )
 
     # Identity Box (ReL, ReU, ImL, ImU) (rectselect))
@@ -299,6 +301,8 @@ def sel_1_entry():
     coords.addWidget(
         gwdict ['sel1idbox'] [-1],
         0,
+        1,
+        4,
         1
     )
 
@@ -322,6 +326,19 @@ def sel_1_entry():
         3
     )
 
+    # Saturation (dial)
+    sel1sat = QDial()
+    sel1sat.setMaximum(10) # x10
+    sel1sat.setMinimum(1) #x10
+    sel1sat.setValue(10) #x10
+    sel1sat.setNotchesVisible(True)
+    gwdict ['sel1sat'].append(sel1sat)
+    coords.addWidget(
+        gwdict ['sel1sat'] [-1],
+        1,
+        3
+    )
+    
     #Label (accepted functions)
     with open('src/accepted_functions.txt') as func_file:
         acc = func_file.readlines()
@@ -340,22 +357,8 @@ def sel_1_entry():
         4
     )
 
-    # Saturation (dial)
-    sel1sat = QDial()
-    sel1sat.setMaximum(10) # x10
-    sel1sat.setMinimum(1) #x10
-    sel1sat.setValue(10) #x10
-    sel1sat.setNotchesVisible(True)
-    gwdict ['sel1sat'].append(sel1sat)
-    coords.addWidget(
-        gwdict ['sel1sat'] [-1],
-        0,
-        5
-    )
-
 
 def sel_2_entry():
-    # Saturation (dial)
     # Acuity (integer text)
     # Contour Base (slider)
 
@@ -369,7 +372,9 @@ def sel_2_entry():
     coords.addWidget(
         gwdict ['sel2box'] [-1],
         0,
-        0
+        0,
+        4,
+        1
     )
 
     # Identity Box (ReL, ReU, ImL, ImU) (rectselect)
@@ -382,6 +387,8 @@ def sel_2_entry():
     coords.addWidget(
         gwdict ['sel2idbox'] [-1],
         0,
+        1,
+        4,
         1
     )
 
@@ -405,6 +412,19 @@ def sel_2_entry():
         3
     )
 
+    # Saturation (dial)
+    sel2sat = QDial()
+    sel2sat.setMaximum(10) # x10
+    sel2sat.setMinimum(1) #x10
+    sel2sat.setValue(10) #x10
+    sel2sat.setNotchesVisible(True)
+    gwdict ['sel2sat'].append(sel2sat)
+    coords.addWidget(
+        gwdict ['sel2sat'] [-1],
+        1,
+        3
+    )
+
     #Label (accepted functions)
     with open('src/accepted_functions.txt') as func_file:
         acc = func_file.readlines()
@@ -423,21 +443,7 @@ def sel_2_entry():
         4
     )
 
-    # Saturation (dial)
-    sel2sat = QDial()
-    sel2sat.setMaximum(10) # x10
-    sel2sat.setMinimum(1) #x10
-    sel2sat.setValue(10) #x10
-    sel2sat.setNotchesVisible(True)
-    gwdict ['sel2sat'].append(sel2sat)
-    coords.addWidget(
-        gwdict ['sel2sat'] [-1],
-        0,
-        5
-    )
-
 def sel_3_entry():
-    # Saturation (dial)
     # Acuity (integer text)
 
     # Box (ReL, ReU, ImL, ImU) (rectselect)
@@ -450,7 +456,9 @@ def sel_3_entry():
     coords.addWidget(
         gwdict ['sel3box'] [-1],
         0,
-        0
+        0,
+        4,
+        1
     )
 
     # Identity Box (ReL, ReU, ImL, ImU) (rectselect)
@@ -463,6 +471,8 @@ def sel_3_entry():
     coords.addWidget(
         gwdict ['sel3idbox'] [-1],
         0,
+        1,
+        4,
         1
     )
 
@@ -486,6 +496,19 @@ def sel_3_entry():
         3
     )
 
+    # Saturation (dial)
+    sel3sat = QDial()
+    sel3sat.setMaximum(10) # x10
+    sel3sat.setMinimum(1) #x10
+    sel3sat.setValue(10) #x10
+    sel3sat.setNotchesVisible(True)
+    gwdict ['sel3sat'].append(sel3sat)
+    coords.addWidget(
+        gwdict ['sel3sat'] [-1],
+        1,
+        3
+    )
+
     #Label (accepted functions)
     with open('src/accepted_functions.txt') as func_file:
         acc = func_file.readlines()
@@ -504,21 +527,7 @@ def sel_3_entry():
         4
     )
 
-    # Saturation (dial)
-    sel3sat = QDial()
-    sel3sat.setMaximum(10) # x10
-    sel3sat.setMinimum(1) #x10
-    sel3sat.setValue(10) #x10
-    sel3sat.setNotchesVisible(True)
-    gwdict ['sel3sat'].append(sel3sat)
-    coords.addWidget(
-        gwdict ['sel3sat'] [-1],
-        0,
-        5
-    )
-
 def sel_4_entry():
-    # Saturation (dial)
     # Acuity (integer text)
     # Contour Base (slider)
 
@@ -532,7 +541,9 @@ def sel_4_entry():
     coords.addWidget(
         gwdict ['sel4box'] [-1],
         0,
-        0
+        0,
+        4,
+        1
     )
 
     # Identity Box (ReL, ReU, ImL, ImU) (rectselect)
@@ -545,6 +556,8 @@ def sel_4_entry():
     coords.addWidget(
         gwdict ['sel4idbox'] [-1],
         0,
+        1,
+        4,
         1
     )
 
@@ -568,6 +581,19 @@ def sel_4_entry():
         3
     )
 
+    # Saturation (dial)
+    sel4sat = QDial()
+    sel4sat.setMaximum(10) # x10
+    sel4sat.setMinimum(1) #x10
+    sel4sat.setValue(10) #x10
+    sel4sat.setNotchesVisible(True)
+    gwdict ['sel4sat'].append(sel4sat)
+    coords.addWidget(
+        gwdict ['sel4sat'] [-1],
+        1,
+        3
+    )
+
     #Label (accepted functions)
     with open('src/accepted_functions.txt') as func_file:
         acc = func_file.readlines()
@@ -584,19 +610,6 @@ def sel_4_entry():
         gwdict ['sel4funckey'] [-1],
         0,
         4
-    )
-
-    # Saturation (dial)
-    sel4sat = QDial()
-    sel4sat.setMaximum(10) # x10
-    sel4sat.setMinimum(1) #x10
-    sel4sat.setValue(10) #x10
-    sel4sat.setNotchesVisible(True)
-    gwdict ['sel4sat'].append(sel4sat)
-    coords.addWidget(
-        gwdict ['sel4sat'] [-1],
-        0,
-        5
     )
 
 def sel_1_display():
