@@ -9,10 +9,14 @@ from PyQt5.QtGui import QCursor
 #Initialise global widgets dict.
 gwdict = {
     'home_image': [],
-    'select_button1': [],
-    'select_button2': [],
-    'select_button3': [],
-    'select_button4': [],
+    'select_button1_img': [],
+    'select_button2_img': [],
+    'select_button3_img': [],
+    'select_button4_img': [],
+    'select_button1_txt': [],
+    'select_button2_txt': [],
+    'select_button3_txt': [],
+    'select_button4_txt': [],
     'base_info': [],
     'sel1box': [],
     'sel2box': [],
@@ -152,14 +156,15 @@ def home_window():
     )
 
     #Create button options.
-    select_button1 = QPushButton()
-    select_button1.setText('Standard Plot')
+    select_button1_img = QPushButton()
+    select_button1_txt = QPushButton()
+    select_button1_txt.setText('Standard Plot')
     button1_img = QtGui.QIcon('assets/continuousglimpse.png')
-    select_button1.setIcon(button1_img)
-    select_button1.setIconSize(
+    select_button1_img.setIcon(button1_img)
+    select_button1_img.setIconSize(
         QtCore.QSize(200, 200)
     )
-    select_button1.setStyleSheet(
+    select_button1_txt.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
         'border-radius: 45px;' +
         'color: "#FFFFFF";' +
@@ -168,26 +173,47 @@ def home_window():
         'padding: 30px 15px;}' +
         '*:hover {background-color: "#26619C";}'
     )
-    select_button1.setCursor(
+    select_button1_txt.setCursor(
         QCursor(
             QtCore.Qt.PointingHandCursor
         )
     )
-    gwdict ['select_button1'].append(select_button1)
+    gwdict ['select_button1_txt'].append(select_button1_txt)
     coords.addWidget(
-        gwdict ['select_button1'] [-1],
+        gwdict ['select_button1_txt'] [-1],
         2,
         0
     )
+    select_button1_img.setStyleSheet(
+        '* {border: 2.5px solid "#26619C";' +
+        'border-radius: 45px;' +
+        'color: "#FFFFFF";' +
+        'font-size: 30px;' +
+        'margin: 0 10px;' +
+        'padding: 30px 15px;}' +
+        '*:hover {background-color: "#26619C";}'
+    )
+    select_button1_img.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    gwdict ['select_button1_img'].append(select_button1_img)
+    coords.addWidget(
+        gwdict ['select_button1_img'] [-1],
+        3,
+        0
+    )
 
-    select_button2 = QPushButton()
-    select_button2.setText('Plot with Modulus Contours')
+    select_button2_img = QPushButton()
+    select_button2_txt = QPushButton()
+    select_button2_txt.setText('Plot with Modulus Contours')
     button2_img = QtGui.QIcon('assets/modulusglimpse.png')
-    select_button2.setIcon(button2_img)
-    select_button2.setIconSize(
+    select_button2_img.setIcon(button2_img)
+    select_button2_img.setIconSize(
         QtCore.QSize(200, 200)
     )
-    select_button2.setStyleSheet(
+    select_button2_txt.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
         'border-radius: 45px;' +
         'color: "#FFFFFF";' +
@@ -196,26 +222,18 @@ def home_window():
         'padding: 30px 15px;}' +
         '*:hover {background-color: "#26619c";}'
     )
-    select_button2.setCursor(
+    select_button2_txt.setCursor(
         QCursor(
             QtCore.Qt.PointingHandCursor
         )
     )
-    gwdict ['select_button2'].append(select_button2)
+    gwdict ['select_button2_txt'].append(select_button2_txt)
     coords.addWidget(
-        gwdict ['select_button2'] [-1],
+        gwdict ['select_button2_txt'] [-1],
         2,
         1
     )
-
-    select_button3 = QPushButton()
-    select_button3.setText('Plot with Phase/Modulus Contours')
-    button3_img = QtGui.QIcon('assets/MPglimpse.png')
-    select_button3.setIcon(button3_img)
-    select_button3.setIconSize(
-        QtCore.QSize(200, 200)
-    )
-    select_button3.setStyleSheet(
+    select_button2_img.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
         'border-radius: 45px;' +
         'color: "#FFFFFF";' +
@@ -224,26 +242,47 @@ def home_window():
         'padding: 30px 15px;}' +
         '*:hover {background-color: "#26619c";}'
     )
-    select_button3.setCursor(
+    select_button2_img.setCursor(
         QCursor(
             QtCore.Qt.PointingHandCursor
         )
     )
-    gwdict ['select_button3'].append(select_button3)
+    gwdict ['select_button2_img'].append(select_button2_img)
     coords.addWidget(
-        gwdict ['select_button3'] [-1],
+        gwdict ['select_button2_img'] [-1],
+        3,
+        1
+    )
+
+    select_button3_img = QPushButton()
+    select_button3_txt = QPushButton()
+    select_button3_txt.setText('Plot with Phase/Modulus Contours')
+    button3_img = QtGui.QIcon('assets/MPglimpse.png')
+    select_button3_img.setIcon(button3_img)
+    select_button3_img.setIconSize(
+        QtCore.QSize(200, 200)
+    )
+    select_button3_txt.setStyleSheet(
+        '* {border: 2.5px solid "#26619C";' +
+        'border-radius: 45px;' +
+        'color: "#FFFFFF";' +
+        'font-size: 30px;' +
+        'margin: 0 10px;' +
+        'padding: 30px 15px;}' +
+        '*:hover {background-color: "#26619c";}'
+    )
+    select_button3_txt.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    gwdict ['select_button3_txt'].append(select_button3_txt)
+    coords.addWidget(
+        gwdict ['select_button3_txt'] [-1],
         2,
         2
     )
-
-    select_button4 = QPushButton()
-    select_button4.setText('Multiple Plots')
-    button4_img = QtGui.QIcon('assets/universalglimpse.png')
-    select_button4.setIcon(button4_img)
-    select_button4.setIconSize(
-        QtCore.QSize(200, 200)
-    )
-    select_button4.setStyleSheet(
+    select_button3_img.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
         'border-radius: 45px;' +
         'color: "#FFFFFF";' +
@@ -252,17 +291,67 @@ def home_window():
         'padding: 30px 15px;}' +
         '*:hover {background-color: "#26619c";}'
     )
-    select_button4.setCursor(
+    select_button3_img.setCursor(
         QCursor(
             QtCore.Qt.PointingHandCursor
         )
     )
-    gwdict ['select_button4'].append(select_button4)
+    gwdict ['select_button3_img'].append(select_button3_img)
     coords.addWidget(
-        gwdict ['select_button4'] [-1],
+        gwdict ['select_button3_img'] [-1],
+        3,
+        2
+    )
+
+    select_button4_img = QPushButton()
+    select_button4_txt = QPushButton()
+    select_button4_txt.setText('Multiple Plots')
+    button4_img = QtGui.QIcon('assets/universalglimpse.png')
+    select_button4_img.setIcon(button4_img)
+    select_button4_img.setIconSize(
+        QtCore.QSize(200, 200)
+    )
+    select_button4_txt.setStyleSheet(
+        '* {border: 2.5px solid "#26619C";' +
+        'border-radius: 45px;' +
+        'color: "#FFFFFF";' +
+        'font-size: 30px;' +
+        'margin: 0 10px;' +
+        'padding: 30px 15px;}' +
+        '*:hover {background-color: "#26619c";}'
+    )
+    select_button4_txt.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    gwdict ['select_button4_txt'].append(select_button4_txt)
+    coords.addWidget(
+        gwdict ['select_button4_txt'] [-1],
         2,
         3
     )
+    select_button4_img.setStyleSheet(
+        '* {border: 2.5px solid "#26619C";' +
+        'border-radius: 45px;' +
+        'color: "#FFFFFF";' +
+        'font-size: 30px;' +
+        'margin: 0 10px;' +
+        'padding: 30px 15px;}' +
+        '*:hover {background-color: "#26619c";}'
+    )
+    select_button4_img.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    gwdict ['select_button4_img'].append(select_button4_img)
+    coords.addWidget(
+        gwdict ['select_button4_img'] [-1],
+        3,
+        3
+    )
+
 
     #Add infotext.
     base_info = QLabel()
