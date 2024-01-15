@@ -1,7 +1,7 @@
 import sys
 sys.dont_write_bytecode = True
 
-from PyQt5.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWidget, QFileDialog, QGridLayout, QSlider, QLineEdit, QDial
+from PyQt5.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWidget, QFileDialog, QGridLayout, QSlider, QLineEdit, QDial, QToolButton
 from PyQt5.QtGui import QPixmap
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import QCursor
@@ -152,8 +152,12 @@ def home_window():
     )
 
     #Create button options.
-    select_button1 = QPushButton(
-        'Standard Plot'
+    select_button1 = QPushButton()
+    select_button1.setText('Standard Plot')
+    button1_img = QtGui.QIcon('assets/continuousglimpse.png')
+    select_button1.setIcon(button1_img)
+    select_button1.setIconSize(
+        QtCore.QSize(200, 200)
     )
     select_button1.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
@@ -162,7 +166,7 @@ def home_window():
         'font-size: 30px;' +
         'margin: 0 10px;' +
         'padding: 30px 15px;}' +
-        '*:hover {background-color: "#26619c";}'
+        '*:hover {background-color: "#26619C";}'
     )
     select_button1.setCursor(
         QCursor(
@@ -178,6 +182,11 @@ def home_window():
 
     select_button2 = QPushButton()
     select_button2.setText('Plot with Modulus Contours')
+    button2_img = QtGui.QIcon('assets/modulusglimpse.png')
+    select_button2.setIcon(button2_img)
+    select_button2.setIconSize(
+        QtCore.QSize(200, 200)
+    )
     select_button2.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
         'border-radius: 45px;' +
@@ -201,6 +210,11 @@ def home_window():
 
     select_button3 = QPushButton()
     select_button3.setText('Plot with Phase/Modulus Contours')
+    button3_img = QtGui.QIcon('assets/MPglimpse.png')
+    select_button3.setIcon(button3_img)
+    select_button3.setIconSize(
+        QtCore.QSize(200, 200)
+    )
     select_button3.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
         'border-radius: 45px;' +
@@ -224,6 +238,11 @@ def home_window():
 
     select_button4 = QPushButton()
     select_button4.setText('Multiple Plots')
+    button4_img = QtGui.QIcon('assets/universalglimpse.png')
+    select_button4.setIcon(button4_img)
+    select_button4.setIconSize(
+        QtCore.QSize(200, 200)
+    )
     select_button4.setStyleSheet(
         '* {border: 2.5px solid "#26619C";' +
         'border-radius: 45px;' +
@@ -250,7 +269,7 @@ def home_window():
     base_info.setText(
         '''<p>Domain colouring is one of the key tools used in complex analysis, and presents great opportunities to aid and accelerate mathematical research.</p>
         <p>With this tool, a variety of complex functions can be plotted on their domain, in a variety of different styles.</p>
-        <p>The tool also has native support for a variety of special functions, such as modified Bessel functions of the first kind.</p>
+        <p>The tool also has native support for a variety of special functions, such as the zeta and polygamma functions.</p>
         <p>To see my other projects, visit my 
         <a href = "https://github.com/VinayR-GitHub" name = "VinayR-GitHub" class = "hl">GitHub</a> <!--Shameless self promotion-->
          or my 
@@ -625,7 +644,7 @@ def sel_4_display():
     pass
 
 
-sel_1_entry()
+home_window()
 
 
 #Display and exit window.
