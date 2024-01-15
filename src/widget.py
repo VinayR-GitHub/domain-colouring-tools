@@ -51,7 +51,11 @@ gwdict = {
     'sel3acu': [],
     'sel4acu': [],
     'sel2contour': [],
-    'sel4contour': []
+    'sel4contour': [],
+    'sel1sub': [],
+    'sel2sub': [],
+    'sel3sub': [],
+    'sel4sub': []
 }
 
 #Create a rect-box-selection widget (customised).
@@ -479,6 +483,22 @@ def sel_1_entry():
         4
     )
 
+    # Submit (push button)
+    sel1sub = QPushButton()
+    sel1sub.setText('Submit')
+    sel1sub.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    gwdict ['sel1sub'].append(sel1sub)
+    coords.addWidget(
+        gwdict ['sel1sub'] [-1],
+        4,
+        0,
+        1,
+        5
+    )
 
 def sel_2_entry():
     # Acuity (integer text)
@@ -514,7 +534,7 @@ def sel_2_entry():
         1
     )
 
-    #Label (function)
+    # Label (function)
     sel2funclab = QLabel()
     sel2funclab.setText('Function:')
     gwdict ['sel2funclab'].append(sel2funclab)
@@ -557,7 +577,7 @@ def sel_2_entry():
         3
     )
 
-    #Label (accepted functions)
+    # Label (accepted functions)
     with open('src/accepted_functions.txt') as func_file:
         acc = func_file.readlines()
     sel2funckey = QLabel()
@@ -573,6 +593,23 @@ def sel_2_entry():
         gwdict ['sel2funckey'] [-1],
         0,
         4
+    )
+
+    # Submit (push button)
+    sel2sub = QPushButton()
+    sel2sub.setText('Submit')
+    sel2sub.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    gwdict ['sel2sub'].append(sel2sub)
+    coords.addWidget(
+        gwdict ['sel2sub'] [-1],
+        4,
+        0,
+        1,
+        5
     )
 
 def sel_3_entry():
@@ -608,7 +645,7 @@ def sel_3_entry():
         1
     )
 
-    #Label (function)
+    # Label (function)
     sel3funclab = QLabel()
     sel3funclab.setText('Function:')
     gwdict ['sel3funclab'].append(sel3funclab)
@@ -651,7 +688,7 @@ def sel_3_entry():
         3
     )
 
-    #Label (accepted functions)
+    # Label (accepted functions)
     with open('src/accepted_functions.txt') as func_file:
         acc = func_file.readlines()
     sel3funckey = QLabel()
@@ -667,6 +704,23 @@ def sel_3_entry():
         gwdict ['sel3funckey'] [-1],
         0,
         4
+    )
+
+    # Submit (push button)
+    sel3sub = QPushButton()
+    sel3sub.setText('Submit')
+    sel3sub.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    gwdict ['sel3sub'].append(sel3sub)
+    coords.addWidget(
+        gwdict ['sel3sub'] [-1],
+        4,
+        0,
+        1,
+        5
     )
 
 def sel_4_entry():
@@ -703,7 +757,7 @@ def sel_4_entry():
         1
     )
 
-    #Label (function)
+    # Label (function)
     sel4funclab = QLabel()
     sel4funclab.setText('Function:')
     gwdict ['sel4funclab'].append(sel4funclab)
@@ -746,7 +800,7 @@ def sel_4_entry():
         3
     )
 
-    #Label (accepted functions)
+    # Label (accepted functions)
     with open('src/accepted_functions.txt') as func_file:
         acc = func_file.readlines()
     sel4funckey = QLabel()
@@ -762,6 +816,23 @@ def sel_4_entry():
         gwdict ['sel4funckey'] [-1],
         0,
         4
+    )
+
+    # Submit (push button)
+    sel4sub = QPushButton()
+    sel4sub.setText('Submit')
+    sel4sub.setCursor(
+        QCursor(
+            QtCore.Qt.PointingHandCursor
+        )
+    )
+    gwdict ['sel4sub'].append(sel4sub)
+    coords.addWidget(
+        gwdict ['sel4sub'] [-1],
+        4,
+        0,
+        1,
+        5
     )
 
 def sel_1_display():
