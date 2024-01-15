@@ -42,6 +42,10 @@ gwdict = {
     'sel2sat': [],
     'sel3sat': [],
     'sel4sat': [],
+    'sel1satlab': [],
+    'sel2satlab': [],
+    'sel3satlab': [],
+    'sel4satlab': [],
     'sel1acu': [],
     'sel2acu': [],
     'sel3acu': [],
@@ -414,7 +418,7 @@ def sel_1_entry():
         1
     )
 
-    #Label (function)
+    # Label (function)
     sel1funclab = QLabel()
     sel1funclab.setText('Function:')
     gwdict ['sel1funclab'].append(sel1funclab)
@@ -434,6 +438,16 @@ def sel_1_entry():
         3
     )
 
+    # Label (saturation)
+    sel1satlab = QLabel()
+    sel1satlab.setText('Saturation Dial')
+    gwdict ['sel1satlab'].append(sel1satlab)
+    coords.addWidget(
+        gwdict ['sel1satlab'] [-1],
+        1,
+        2
+    )
+
     # Saturation (dial)
     sel1sat = QDial()
     sel1sat.setMaximum(10) # x10
@@ -447,7 +461,7 @@ def sel_1_entry():
         3
     )
     
-    #Label (accepted functions)
+    # Label (accepted functions)
     with open('src/accepted_functions.txt') as func_file:
         acc = func_file.readlines()
     sel1funckey = QLabel()
@@ -518,6 +532,16 @@ def sel_2_entry():
         gwdict ['sel2func'] [-1],
         0,
         3
+    )
+
+    # Label (saturation)
+    sel2satlab = QLabel()
+    sel2satlab.setText('Saturation Dial')
+    gwdict ['sel2satlab'].append(sel2satlab)
+    coords.addWidget(
+        gwdict ['sel2satlab'] [-1],
+        1,
+        2
     )
 
     # Saturation (dial)
@@ -602,6 +626,16 @@ def sel_3_entry():
         gwdict ['sel3func'] [-1],
         0,
         3
+    )
+
+    # Label (saturation)
+    sel3satlab = QLabel()
+    sel3satlab.setText('Saturation Dial')
+    gwdict ['sel3satlab'].append(sel3satlab)
+    coords.addWidget(
+        gwdict ['sel3satlab'] [-1],
+        1,
+        2
     )
 
     # Saturation (dial)
@@ -689,6 +723,16 @@ def sel_4_entry():
         3
     )
 
+    # Label (saturation)
+    sel4satlab = QLabel()
+    sel4satlab.setText('Saturation Dial')
+    gwdict ['sel4satlab'].append(sel4satlab)
+    coords.addWidget(
+        gwdict ['sel4satlab'] [-1],
+        1,
+        2
+    )
+
     # Saturation (dial)
     sel4sat = QDial()
     sel4sat.setMaximum(10) # x10
@@ -733,7 +777,7 @@ def sel_4_display():
     pass
 
 
-home_window()
+sel_1_entry()
 
 
 #Display and exit window.
